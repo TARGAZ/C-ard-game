@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _ABILITY_HUMAN_H
 #define _ABILITY_HUMAN_H
 

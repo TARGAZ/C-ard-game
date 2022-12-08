@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #ifndef _ABILITY_MURLOC_H
 #define _ABILITY_MURLOC_H

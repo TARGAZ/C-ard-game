@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _ABILITY_NORMAL_H
 #define _ABILITY_NORMAL_H
 
