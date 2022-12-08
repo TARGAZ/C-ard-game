@@ -22,6 +22,7 @@ public:
 	
 	~Player()
 	{
+		name.clear();
 	}
 };
 
