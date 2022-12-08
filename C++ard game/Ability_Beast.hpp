@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _ABILITY_BEAST_H
 #define _ABILITY_BEAST_H
 

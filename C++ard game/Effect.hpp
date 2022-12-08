@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _EFFECT_H
 #define _EFFECT_H
 

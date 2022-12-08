@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _CHAMPION_H
 #define _CHAMPION_H
 

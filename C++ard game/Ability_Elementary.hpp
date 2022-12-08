@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #ifndef _ABILITY_ELEMENTARY_H
 #define _ABILITY_ELEMENTARY_H

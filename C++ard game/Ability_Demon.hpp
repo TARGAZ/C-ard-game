@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _ABILITY_DEMON_H
 #define _ABILITY_DEMON_H
 

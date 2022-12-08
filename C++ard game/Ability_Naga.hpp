@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #ifndef _ABILITY_NAGA_H
 #define _ABILITY_NAGA_H

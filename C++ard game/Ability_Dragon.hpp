@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _ABILITY_DRAGON_H
 #define _ABILITY_DRAGON_H
 

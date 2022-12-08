@@ -1,8 +1,3 @@
-/**
- * Project Untitled
- */
-
-
 #ifndef _ABILITY_MECA_H
 #define _ABILITY_MECA_H
 
