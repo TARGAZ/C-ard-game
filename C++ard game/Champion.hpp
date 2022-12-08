@@ -1,10 +1,12 @@
 #ifndef _CHAMPION_H
 #define _CHAMPION_H
 
+#include <string>
+
 class Champion 
 {
 private:
-    char name;
+    std::string name;
     int PV;
     int armor;
     int ability_id;
