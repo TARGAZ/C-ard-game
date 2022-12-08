@@ -144,6 +144,7 @@
     <ClCompile Include="Ability_Normal.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Champion.cpp" />
+    <ClCompile Include="Draw.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="main.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="Card.hpp" />
     <ClInclude Include="Champ.hpp" />
     <ClInclude Include="Champion.hpp" />
+    <ClInclude Include="Draw.hpp" />
     <ClInclude Include="Effect.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Player.hpp" />
