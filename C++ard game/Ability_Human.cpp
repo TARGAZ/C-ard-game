@@ -1,7 +1,3 @@
-/**
- * Project Untitled
- */
-
 
 #include "Ability_Human.hpp"
 

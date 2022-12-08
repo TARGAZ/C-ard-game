@@ -3,7 +3,7 @@
 
 enum Champ 
 { 
-	Notdefine,
+	Notdefined,
 };
 
 #endif //_CHAMP_H
