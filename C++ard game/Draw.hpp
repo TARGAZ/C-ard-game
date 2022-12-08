@@ -12,7 +12,15 @@ private:
 
 public:
 	void buy_phase();
+	Draw()
+	{
+		nb_card = 0;
+	}
 
+	~Draw()
+	{
+
+	}
 };
 
 
