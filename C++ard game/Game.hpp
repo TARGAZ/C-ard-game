@@ -5,15 +5,27 @@
 #include "Player.hpp"
 
 class Game {
-public:
-
-	void main_game();
-
-	void which_fighter();
 private:
 	int nb_round;
 	std::vector<Player> leaderboard;
 	int opponent;
+	
+public:
+	Game()
+	{
+		nb_round = 0;
+		opponent = 0;
+	}
+	
+	~Game()
+	{
+		leaderboard.clear();
+	}
+	
+	void main_game();
+
+	void which_fighter();
+
 };
 
 #endif //_GAME_H

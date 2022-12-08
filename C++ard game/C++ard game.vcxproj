@@ -142,7 +142,7 @@
     <ClCompile Include="Ability_Murloc.cpp" />
     <ClCompile Include="Ability_Naga.cpp" />
     <ClCompile Include="Ability_Normal.cpp" />
-    <ClCompile Include="Cards.cpp" />
+    <ClCompile Include="Card.cpp" />
     <ClCompile Include="Champion.cpp" />
     <ClCompile Include="Effect.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -159,7 +159,7 @@
     <ClInclude Include="Ability_Murloc.hpp" />
     <ClInclude Include="Ability_Naga.hpp" />
     <ClInclude Include="Ability_Normal.hpp" />
-    <ClInclude Include="Cards.hpp" />
+    <ClInclude Include="Card.hpp" />
     <ClInclude Include="Champ.hpp" />
     <ClInclude Include="Champion.hpp" />
     <ClInclude Include="Effect.hpp" />

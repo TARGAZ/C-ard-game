@@ -14,11 +14,17 @@ private:
 public:
 	Champion()
 	{
-		name = "Pablo";
-		PV = 20;
-		armor = 10;
+		name = "NotDefined";
+		PV = 0;
+		armor = 0;
 		ability_id = 0;
 	}
+	
+	~Champion()
+	{
+		name.clear();
+	}
+	
 	void ability_effect();
 };
 

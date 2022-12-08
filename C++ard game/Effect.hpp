@@ -10,6 +10,20 @@ private:
 	bool agony_rale;
 
 	void ApplyEffect();
+public :
+	Effect()
+	{
+		shield = false;
+		wind_fury = false;
+		provocation = false;
+		reincarnation = false;
+		agony_rale = false;
+	}
+	
+	~Effect()
+	{
+		
+	}
 };
 
 #endif //_EFFECT_H

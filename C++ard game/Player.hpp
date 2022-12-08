@@ -5,19 +5,24 @@
 #include <string>
 
 class Player {
+private:
+	std::string name;
+	int money;
+	int level;
+	
 public:
 
 	void player_turn();
 	Player()
 	{
-		name = "Michel";
-		money = 3;
+		name = "notDefined";
+		money = 0;
 		level = 0;
 	}
-private:
-	std::string name;
-	int money;
-	int level;
+	
+	~Player()
+	{
+	}
 };
 
 #endif //_PLAYER_H
