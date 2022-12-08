@@ -11,8 +11,17 @@ private:
 	int nb_card;
 
 public:
-	void buy_phase();
+	Draw()
+	{
+		nb_card = 0;
+	}
 
+	~Draw()
+	{
+
+	}
+
+	void buy_phase();
 };
 
 

@@ -1,6 +1,6 @@
 #include "Card.hpp"
 
-/**
- * Cards implementation
- */
-
+void Card::FindAbility()
+{
+	
+}

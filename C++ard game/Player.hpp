@@ -10,9 +10,7 @@ private:
 	int money;
 	int level;
 	
-public:
-
-	void player_turn();
+public:	
 	Player()
 	{
 		name = "notDefined";
@@ -24,6 +22,8 @@ public:
 	{
 		name.clear();
 	}
+	
+	void player_turn();
 };
 
 #endif //_PLAYER_H
