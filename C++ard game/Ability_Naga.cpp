@@ -1,6 +1,3 @@
-/**
- * Project Untitled
- */
 
 
 #include "Ability_Naga.hpp"
