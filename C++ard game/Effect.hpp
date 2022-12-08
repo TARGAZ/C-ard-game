@@ -2,14 +2,14 @@
 #define _EFFECT_H
 
 class Effect {
-private: 
-    shield bool;
-    wind_fury bool;
-    provocation bool;
-    void bool; reincarnation;
-    agony_rale bool;
-    
-void ApplyEffect();
+private:
+	bool shield;
+	bool wind_fury;
+	bool provocation;
+	bool reincarnation;
+	bool agony_rale;
+
+	void ApplyEffect();
 };
 
 #endif //_EFFECT_H
