@@ -3,16 +3,23 @@
 
 #include <string>
 
-class Champion 
+class Champion
 {
 private:
-    std::string name;
-    int PV;
-    int armor;
-    int ability_id;
-	
-public:  
-    void ability_effect();
+	std::string name;
+	int PV;
+	int armor;
+	int ability_id;
+
+public:
+	Champion()
+	{
+		name = "Pablo";
+		PV = 20;
+		armor = 10;
+		ability_id = 0;
+	}
+	void ability_effect();
 };
 
 #endif //_CHAMPION_H
