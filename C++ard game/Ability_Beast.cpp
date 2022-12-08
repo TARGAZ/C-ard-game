@@ -3,7 +3,7 @@
  */
 
 
-#include "Ability_Beast.h"
+#include "Ability_Beast.hpp"
 
 /**
  * Ability_Beast implementation

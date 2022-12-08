@@ -3,7 +3,7 @@
  */
 
 
-#include "Effect.h"
+#include "Effect.hpp"
 
 /**
  * Effect implementation

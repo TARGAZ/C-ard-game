@@ -3,7 +3,7 @@
  */
 
 
-#include "Champion.h"
+#include "Champion.hpp"
 
 /**
  * Champion implementation

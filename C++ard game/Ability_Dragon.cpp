@@ -3,7 +3,7 @@
  */
 
 
-#include "Ability_Dragon.h"
+#include "Ability_Dragon.hpp"
 
 /**
  * Ability_Dragon implementation

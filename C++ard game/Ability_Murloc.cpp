@@ -3,7 +3,7 @@
  */
 
 
-#include "Ability_Murloc.h"
+#include "Ability_Murloc.hpp"
 
 /**
  * Ability_Murloc implementation

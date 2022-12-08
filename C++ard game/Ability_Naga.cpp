@@ -3,7 +3,7 @@
  */
 
 
-#include "Ability_Naga.h"
+#include "Ability_Naga.hpp"
 
 /**
  * Ability_Naga implementation

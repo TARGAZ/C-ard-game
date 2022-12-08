@@ -3,7 +3,7 @@
  */
 
 
-#include "Ability_Normal.h"
+#include "Ability_Normal.hpp"
 
 /**
  * Ability_Normal implementation
