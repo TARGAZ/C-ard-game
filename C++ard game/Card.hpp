@@ -1,5 +1,5 @@
-#ifndef _CARDS_HPP_
-#define _CARDS_HPP_
+#ifndef _CARD_HPP_
+#define _CARD_HPP_
 
 #include <string>
 
