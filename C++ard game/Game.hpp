@@ -25,6 +25,8 @@ public:
 	void main_game();
 
 	void which_fighter();
+	
+	int get_nb_round();
 
 };
 

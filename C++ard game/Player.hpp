@@ -17,12 +17,17 @@ public:
 		money = 0;
 		level = 0;
 	}
+	Player(std::string player_name)
+	{
+		name = player_name;
+		money = 0;
+		level = 0;
+	}
 	
 	~Player()
 	{
 		name.clear();
 	}
-	
 	void player_turn();
 };
 
