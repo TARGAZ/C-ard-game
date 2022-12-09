@@ -9,21 +9,21 @@ private:
 	std::string name;
 	int money;
 	int level;
-	
-public:	
+
+public:
 	Player()
 	{
 		name = "notDefined";
 		money = 0;
 		level = 0;
 	}
-	
+
 	~Player()
 	{
-		name.clear();
+
 	}
-	
+
 	void player_turn();
 };
 
-#endif //_PLAYER_H
+#endif //_PLAYER_H                                                                                                                                                                                                                                                                                                                
