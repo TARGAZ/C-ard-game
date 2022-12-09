@@ -1,5 +1,7 @@
 
 #include "Game.hpp"
+#include "Champion.hpp"
+#include "Player.hpp"
 #include <iostream>
 
 
@@ -11,7 +13,7 @@ void Game::main_game()
 	game_menus();
 
 	//championChoice();
-	player.set_champion();
+	//player.set_champion(Champion champion);
 
 	while (1)
 	{
@@ -28,9 +30,12 @@ void Game::main_game()
 
 
 }
-void Game::startRound()
+void Game::startRound()//attribution des pièces
 {
-
+	if (nb_round == 0)
+	{
+		player.
+	}
 }
 
 void Game::openShop()

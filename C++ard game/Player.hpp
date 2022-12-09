@@ -31,7 +31,7 @@ public:
 
 	}
 
-	int get_money(int money, int nbround);
+	int get_money(int money, int nbround, int starting_money);//nbround vient de la classe Game
 
 	void player_turn();
 	void set_champion(Champion champion);
