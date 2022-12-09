@@ -8,7 +8,7 @@ class Card
 private :
 	std::string name;
 	int damage;
-	int PV;
+	int hp;
 	int armor;
 	int type;
 	int ability_id;
@@ -20,7 +20,7 @@ public :
 	{
 		name = "Default";
 		damage = 0;
-		PV = 0;
+		hp = 0;
 		armor = 0;
 		type = 0;
 		ability_id = 0;
