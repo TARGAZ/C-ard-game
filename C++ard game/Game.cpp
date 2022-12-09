@@ -17,7 +17,7 @@ void Game::game_menus()
 {
 	draw_title();
 	std::cout << "\n Bienvenue dans C++ard Game ! Quel est votre nom ?" << std::endl;
-
+	
 	std::string playername;
 	std::cin >> playername;
 	player = Player(playername);
@@ -31,8 +31,6 @@ void Game::draw_title()
 	std::cout << " | |  |_   _|_   _/ _` | '__/ _` | | | |_ |/ _` | '_ ` _ \\ / _ \\" << "\n";
 	std::cout << " | |____|_|   |_|| (_| | | | (_| | | |__| | (_| | | | | | |  __/" << "\n";
 	std::cout << "  \\_____|         \\__,_|_|  \\__,_|  \\_____|\\__,_|_| |_| |_|\\___|" << std::endl;
-
-
 }
 
 int Game::get_nb_round()
