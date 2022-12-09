@@ -3,6 +3,7 @@
 
 #include <string>
 #include "Champ.hpp"
+#include "Champion.hpp"
 #include <cstdlib>
 #include <iostream>
 
