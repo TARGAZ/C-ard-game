@@ -5,36 +5,45 @@
 
 class Card
 {
-private :
+private:
 	std::string name;
 	int damage;
-	int PV;
+	int hp;
 	int armor;
 	int type;
 	int ability_id;
 	int cost;
 	int level;
 
-public :
+public:
 	Card()
 	{
 		name = "Default";
 		damage = 0;
-		PV = 0;
+		hp = 0;
 		armor = 0;
 		type = 0;
 		ability_id = 0;
 		cost = 0;
 		level = 0;
 	}
-
+	Card(std::string name, int damage, int hp, int armor, int type, int ability_id, int cost, int level)
+	{
+		this->name = name;
+		this->damage = damage;
+		this->hp = hp;
+		this->armor = armor;
+		this->type = type;
+		this->ability_id = ability_id;
+		this->cost = cost;
+		this->level = level;
+	}
 	~Card()
 	{
 
 	}
-	
+
 	void FindAbility();
-	
 };
 
 
