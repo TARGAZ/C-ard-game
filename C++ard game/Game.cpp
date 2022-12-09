@@ -40,7 +40,7 @@ void Game::openShop()
 
 Player Game::fight()
 {
-
+	return player;
 }
 
 void Game::downgradePlayer(Player loser)

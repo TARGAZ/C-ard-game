@@ -10,9 +10,9 @@ void Player::player_turn()
 {
 
 }
-void Player::set_champion(Champion champion)
+void Player::set_champion()
 {
-	champion = champion;
+	champion.Validation_Champion(Champion_Proposition());
 }
 
 
@@ -23,6 +23,5 @@ int Player::get_money(int money, int nbround)//nbround vient de la classe Game
 	if (var > 10)
 		var = 10;
 	return var;
-}
 }
 

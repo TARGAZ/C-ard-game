@@ -29,9 +29,9 @@ public:
 		ability_id = 0;
 	}
 
-	Champ Find_Champion_Proposition();
-	std::string Find_Champion_NAME(Champ choice);
-	Champ Champion_Proposition();
+
+
+
 	void Validation_Champion(Champ choice);
 	void ability_effect();
 
@@ -46,8 +46,11 @@ public:
 
 	~Champion()
 	{
-		
+
 	}
 };
+Champ Find_Champion_Proposition();
+Champ Champion_Proposition();
+std::string Find_Champion_NAME(Champ choice);
 
 #endif //_CHAMPION_H
