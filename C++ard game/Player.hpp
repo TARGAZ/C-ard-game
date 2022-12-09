@@ -31,6 +31,8 @@ public:
 
 	}
 
+	int get_money(int money, int nbround);
+
 	void player_turn();
 	void set_champion(Champion champion);
 	std::string getName();
