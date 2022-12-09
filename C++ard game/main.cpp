@@ -4,15 +4,19 @@
 #include "Card.hpp"
 #include "Effect.hpp"
 #include "Game.hpp"
+#include "Champ.hpp"
+#include <string>
+#include <iostream>
 
 int main()
 {
-	Game game = Game();
+	/*Game game = Game();
 	Champion champion = Champion();
 	Effect effect = Effect();
 	Card card = Card();
-	Player player = Player();
-
-
+	Player player = Player();*/
+	Champion c  = Champion();
+	c.Validation_Champion(c.Champion_Proposition());
+	
 	return 0;
 }
