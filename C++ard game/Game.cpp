@@ -3,7 +3,7 @@
 #include "Champion.hpp"
 #include "Player.hpp"
 #include <iostream>
-
+#include <Windows.h>
 
 
 void Game::main_game()
@@ -23,7 +23,6 @@ void Game::main_game()
 		openShop();
 
 		loser = fight();
-		downgradePlayer(loser);
 	}
 
 
@@ -35,7 +34,6 @@ void Game::startRound()//attribution des pièces
 	int starting_money = 3;//pièces de départ | A CHANGER SELON CHAMPION
 	
 	player.get_money(nb_round, starting_money);//Gestion de l'ajout de pièces à chaque tour.
-
 }
 
 void Game::openShop()
@@ -45,12 +43,7 @@ void Game::openShop()
 
 Player Game::fight()
 {
-
-}
-
-void Game::downgradePlayer(Player loser)
-{
-
+	return player;
 }
 
 void Game::which_fighter()
@@ -71,6 +64,7 @@ void Game::game_menus()
 
 void Game::draw_title()
 {
+	system("Color 17");
 	std::cout << "   _____                        _    _____                      " << "\n";
 	std::cout << "  / ____|_     _               | |  / ____|                     " << "\n";
 	std::cout << " | |   _| |_ _| |_ __ _ _ __ __| | | |  __  __ _ _ __ ___   ___ " << "\n";
