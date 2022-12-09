@@ -6,6 +6,6 @@
  */
 
 
-void Player::player_turn() {
-
+void Player::player_turn()
+{
 }

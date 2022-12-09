@@ -28,7 +28,6 @@ public:
 	{
 		name.clear();
 	}
-	
 	void player_turn();
 };
 
