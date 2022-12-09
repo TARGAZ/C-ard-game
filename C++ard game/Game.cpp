@@ -2,18 +2,21 @@
 #include "Game.hpp"
 #include <iostream>
 
-/**
- * Game implementation
- */
 
 
-void Game::main_game() {
+void Game::main_game()
+{
+
+	game_menus();
+
 
 }
 
-void Game::which_fighter() {
+void Game::which_fighter()
+{
 
 }
+
 void Game::game_menus()
 {
 	draw_title();
@@ -22,8 +25,7 @@ void Game::game_menus()
 	std::string playername;
 	std::cin >> playername;
 	player = Player(playername);
-	
-	
+	nb_round++;
 }
 
 void Game::draw_title()
