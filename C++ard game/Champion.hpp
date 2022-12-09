@@ -19,12 +19,12 @@ public:
 		armor = 0;
 		ability_id = 0;
 	}
-	
+
 	~Champion()
 	{
-		name.clear();
+
 	}
-	
+
 	void ability_effect();
 };
 
