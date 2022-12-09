@@ -6,9 +6,44 @@
 
 void Game::main_game()
 {
+	Player& loser = player;
 
 	game_menus();
 
+	//championChoice();
+
+	while (1)
+	{
+		startRound();
+
+
+		openShop();
+
+		loser = fight();
+		downgradePlayer(loser);
+	}
+
+
+
+
+}
+void startRound()
+{
+
+}
+
+void openShop()
+{
+
+}
+
+Player fight()
+{
+
+}
+
+void downgradePlayer(Player)
+{
 
 }
 
@@ -21,7 +56,7 @@ void Game::game_menus()
 {
 	draw_title();
 	std::cout << "\n Bienvenue dans C++ard Game ! Quel est votre nom ?" << std::endl;
-	
+
 	std::string playername;
 	std::cin >> playername;
 	player = Player(playername);

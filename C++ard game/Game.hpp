@@ -10,13 +10,13 @@ private:
 	int nb_round;
 	std::vector<Player*> leaderboard;
 	Player player;
-	int opponent;
+	Player opponent;
 
 public:
 	Game()
 	{
 		nb_round = 0;
-		opponent = 0;
+		opponent = Player("Bot Bob");
 	}
 
 	~Game()
@@ -33,6 +33,14 @@ public:
 	void which_fighter();
 
 	int get_nb_round();
+
+	void startRound();
+
+	void openShop();
+
+	Player fight();
+
+	void downgradePlayer();
 
 };
 

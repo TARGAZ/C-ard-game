@@ -33,6 +33,7 @@ public:
 
 	void player_turn();
 	void set_champion(Champion champion);
+	std::string getName();
 };
 
 #endif //_PLAYER_H                                                                                                                                                                                                                                                                                                                

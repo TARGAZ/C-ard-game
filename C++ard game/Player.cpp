@@ -10,7 +10,12 @@ void Player::player_turn()
 {
 
 }
-void set_champion(Champion champion)
+void Player::set_champion(Champion champion)
 {
 	champion = champion;
+}
+
+std::string Player::getName()
+{
+	return name;
 }
