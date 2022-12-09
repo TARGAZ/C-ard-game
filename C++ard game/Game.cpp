@@ -5,6 +5,8 @@
 #include <iostream>
 #include <Windows.h>
 
+#define color_reset system("color 70")
+
 
 void Game::main_game()
 {
@@ -71,6 +73,8 @@ void Game::draw_title()
 	std::cout << " | |  |_   _|_   _/ _` | '__/ _` | | | |_ |/ _` | '_ ` _ \\ / _ \\" << "\n";
 	std::cout << " | |____|_|   |_|| (_| | | | (_| | | |__| | (_| | | | | | |  __/" << "\n";
 	std::cout << "  \\_____|         \\__,_|_|  \\__,_|  \\_____|\\__,_|_| |_| |_|\\___|" << std::endl;
+	system("Color 70");
+	//color_reset;
 }
 
 int Game::get_nb_round()
