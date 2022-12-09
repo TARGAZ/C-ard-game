@@ -28,7 +28,17 @@ public:
 		cost = 0;
 		level = 0;
 	}
-
+	Card(std::string name, int damage, int hp, int armor, int type, int ability_id, int cost, int level)
+	{
+		this->name = name;
+		this->damage = damage;
+		this->hp = hp;
+		this->armor = armor;
+		this->type = type;
+		this->ability_id = ability_id;
+		this->cost = cost;
+		this->level = level;
+	}
 	~Card()
 	{
 
