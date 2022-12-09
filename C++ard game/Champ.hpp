@@ -92,7 +92,7 @@ enum Champ
 	Ysera,
 	Y_Shaarj,
 	Zephrys_le_Grand,
-	Elise_Cheretoile
+	Elise_Cherchetoile
 };
 
 #endif //_CHAMP_H
