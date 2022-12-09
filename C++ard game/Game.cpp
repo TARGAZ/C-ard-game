@@ -11,6 +11,7 @@ void Game::main_game()
 	game_menus();
 
 	//championChoice();
+	player.set_champion();
 
 	while (1)
 	{
@@ -27,22 +28,22 @@ void Game::main_game()
 
 
 }
-void startRound()
+void Game::startRound()
 {
 
 }
 
-void openShop()
+void Game::openShop()
 {
 
 }
 
-Player fight()
+Player Game::fight()
 {
 
 }
 
-void downgradePlayer(Player)
+void Game::downgradePlayer(Player loser)
 {
 
 }

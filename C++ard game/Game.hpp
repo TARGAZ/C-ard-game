@@ -40,7 +40,7 @@ public:
 
 	Player fight();
 
-	void downgradePlayer();
+	void downgradePlayer(Player loser);
 
 };
 
