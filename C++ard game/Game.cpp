@@ -5,7 +5,7 @@
 
 void Game::main_game()
 {
-
+	game_menus();
 }
 
 void Game::which_fighter()
@@ -17,6 +17,7 @@ void Game::game_menus()
 {
 	draw_title();
 	std::cout << "\n Bienvenue dans C++ard Game ! Quel est votre nom ?" << std::endl;
+
 	std::string playername;
 	std::cin >> playername;
 	player = Player(playername);
