@@ -10,8 +10,8 @@ void Game::main_game()
 
 	game_menus();
 
-	//championChoice();
 	player.set_champion();
+	opponent.set_champion_automaticly();
 
 	while (1)
 	{

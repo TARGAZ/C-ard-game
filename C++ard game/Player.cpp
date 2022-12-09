@@ -14,6 +14,10 @@ void Player::set_champion()
 {
 	champion.Validation_Champion(Champion_Proposition());
 }
+void Player::set_champion_automaticly()
+{
+
+}
 
 
 int Player::get_money(int money, int nbround)//nbround vient de la classe Game
