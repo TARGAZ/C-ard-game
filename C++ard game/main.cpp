@@ -9,11 +9,8 @@
 int main()
 {
 	Game game = Game();
-	Champion champion = Champion();
-	Effect effect = Effect();
-	Card card = Card();
-	Player player = Player();
 
+	game.main_game();
 
 	return 0;
 }
