@@ -24,5 +24,3 @@ int Player::get_money(int money, int nbround)//nbround vient de la classe Game
 		var = 10;
 	return var;
 }
-}
-

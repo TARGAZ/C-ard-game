@@ -9,7 +9,6 @@ class Draw
 {
 private:
 	std::vector<Card*> all_card;
-	//std::vector<Card&> deck;
 	int nb_card;
 
 public:

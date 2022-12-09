@@ -3,7 +3,10 @@
 #define _PLAYER_H
 
 #include <string>
+#include <vector>
 #include "Champion.hpp"
+#include "Draw.hpp"
+
 
 class Player {
 private:
@@ -11,6 +14,9 @@ private:
 	int money;
 	int level;
 	Champion champion;
+	std::vector<Card*> Hand;
+	std::vector<Card*> Board;
+	
 
 public:
 	Player()
@@ -34,6 +40,10 @@ public:
 	int get_money(int money, int nbround);
 
 	void player_turn();
+	
+	std::vector<Card*> getBoard() {
+		return Board;
+	}
 	void set_champion(Champion champion);
 	std::string getName();
 };

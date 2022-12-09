@@ -11,7 +11,7 @@ void Game::main_game()
 	game_menus();
 
 	//championChoice();
-	player.set_champion();
+	//player.set_champion();
 
 	while (1)
 	{
@@ -40,7 +40,46 @@ void Game::openShop()
 
 Player Game::fight()
 {
+	//start of the fight
+	//apply appility of the champion if he pay it in shop
+	int champoin_ability = 0; // need to chnage it
+	if (champoin_ability == 1)
+	{
+		//apply the ability in the champion class
+	}
 
+	//apply card effect if there is start fight ability
+	int card_ability = 0; // need to chnage it
+	if (card_ability == 1)
+	{
+		//apply the ability in the card class
+	}
+	
+	//start with the player with the most card on board or randomise who start
+	if (player.getBoard().size() > opponent.getBoard().size())
+	{
+		//player start
+	}
+	else if (player.getBoard().size() < opponent.getBoard().size())
+	{
+		//opponent start
+	}
+	else
+	{
+		//randomise who start
+	}
+	
+	//Do the card fight ends when one of the player has no card on board
+
+
+	//calculate the damage to apply to the opponant
+
+	
+	//apply card end fight ability
+
+	
+	//ends of the fight
+	return player;
 }
 
 void Game::downgradePlayer(Player loser)
