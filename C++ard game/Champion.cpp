@@ -270,7 +270,7 @@ Champ Champion::Find_Champion_Proposition() {
 		choice1 = Zephrys_le_Grand;
 		break;
 	case 89:
-		choice1 = Elise_Cheretoile;
+		choice1 = Elise_Cherchetoile;
 		break;
 	}
 	return choice1;
@@ -299,163 +299,163 @@ Champ Champion::Champion_Proposition() {
 std::string Champion::Find_Champion_NAME(Champ choice) {
 	switch (choice) {
 	case 1:
-		return "A_F_Kah";
+		return "A.F. Kah";
 		break;
 	case 2:
-		return "Aile_de_mort";
+		return "Aile de mort";
 		break;
 	case 3:
 		return "Alexstrasa";
 		break;
 	case 4:
-		return "Al_Akir";
+		return "Al'Akir";
 		break;
 	case 5:
-		return "Ambassadeur_Faelin";
+		return "Ambassadeur Faelin";
 		break;
 	case 6:
-		return "Aranna_Cherchetoile";
+		return "Aranna Cherchétoile";
 		break;
 	case 7:
-		return "As_du_casse_Cire_Pilleur";
+		return "As du casse Cire-Pilleur";
 		break;
 	case 8:
-		return "Baz_hial_la_liche";
+		return "Baz'hial la liche";
 		break;
 	case 9:
-		return "Bac_au_vent";
+		return "Bac-au-vent";
 		break;
 	case 10:
-		return "Bru_kan";
+		return "Bru'kan";
 		break;
 	case 11:
-		return "Capitaine_Double_Crochet";
+		return "Capitaine Double-Crochet";
 		break;
 	case 12:
-		return "Capitaine_Eudora";
+		return "Capitaine Eudora";
 		break;
 	case 13:
-		return "Captaine_celeste_Kragg";
+		return "Cap'taine celeste Kragg";
 		break;
 	case 14:
-		return "Cariel_Roame";
+		return "Cariel Roame";
 		break;
 	case 15:
 		return "Carniflore";
 		break;
 	case 16:
-		return "Chenvaa_la";
+		return "Chenvaa'la";
 		break;
 	case 17:
-		return "C_Thun";
+		return "C'Thun";
 		break;
 	case 18:
-		return "Dame_Vashj";
+		return "Dame Vashj";
 		break;
 	case 19:
-		return "Daryl_le_Danseur";
+		return "Daryl le Danseur";
 		break;
 	case 20:
-		return "Dinodompteur_Brann";
+		return "Dinodompteur Brann";
 		break;
 	case 21:
-		return "Drek_Thar";
+		return "Drek'Thar";
 		break;
 	case 22:
-		return "Edwin_Vancleef";
+		return "Edwin Vancleef";
 		break;
 	case 23:
-		return "Fongimancien_Flurgl";
+		return "Fongimancien Flurgl";
 		break;
 	case 24:
 		return "Galakrond";
 		break;
 	case 25:
-		return "Gardienne_de_la_foret_Omu";
+		return "Gardienne de la_forêt Omu";
 		break;
 	case 26:
-		return "Goerge_le_Dechu";
+		return "Goerge le Déchu";
 		break;
 	case 27:
-		return "Grise_branche";
+		return "Grisebranche";
 		break;
 	case 28:
-		return "Gruff_Totem_Runique";
+		return "Gruff Totem-Runique";
 		break;
 	case 29:
-		return "Illidan_Hurlorage";
+		return "Illidan Hurlorage";
 		break;
 	case 30:
-		return "Ini_Glissorage";
+		return "Ini Glissorage";
 		break;
 	case 31:
-		return "Jandice_Barov";
+		return "Jandice Barov";
 		break;
 	case 32:
-		return "Kael_thas_Haut_Soleil";
+		return "Kael'thas Haut-Soleil";
 		break;
 	case 33:
-		return "Kurtrus_Chutecendre";
+		return "Kurtrus Chutecendre";
 		break;
 	case 34:
-		return "Le_Geolier";
+		return "Le Geôlier";
 		break;
 	case 35:
-		return "Le_Recousu";
+		return "Le Recousu";
 		break;
 	case 36:
-		return "Le_conservateur";
+		return "Le conservateur";
 		break;
 	case 37:
-		return "Le_grand_Akazamzarak";
+		return "Le grand Akazamzarak";
 		break;
 	case 38:
-		return "Le_roi_des_Rats";
+		return "Le roi des Rats";
 		break;
 	case 39:
-		return "Le_roi_liche";
+		return "Le roi-liche";
 		break;
 	case 40:
-		return "M_Bigglesworth";
+		return "M. Bigglesworth";
 		break;
 	case 41:
-		return "Macaron_le_cuisinier";
+		return "Macaron le cuisinier";
 		break;
 	case 42:
-		return "Maiev_Chantelombre";
+		return "Maiev Chantelombre";
 		break;
 	case 43:
 		return "Malygos";
 		break;
 	case 44:
-		return "Maitre_Nguyen";
+		return "Maitre Nguyen";
 		break;
 	case 45:
-		return "Millhouse_Tempete_de_Mana";
+		return "Millhouse Tempête-de-Mana";
 		break;
 	case 46:
-		return "Millificent_Tempete_de_Mana";
+		return "Millificent Tempête-de-Mana";
 		break;
 	case 47:
-		return "Murloc_Holmes";
+		return "Murloc Holmes";
 		break;
 	case 48:
-		return "Mutanus_le_Devoreur";
+		return "Mutanus le Dévoreur";
 		break;
 	case 49:
-		return "Mecano_amplificateur";
+		return "Mecano-amplificateur";
 		break;
 	case 50:
-		return "Neunoeil_le_pirate";
+		return "Neunoeil le pirate";
 		break;
 	case 51:
 		return "Nozdormu";
 		break;
 	case 52:
-		return "Necrorateur_Noirepine";
+		return "Necrorateur Noirépine";
 		break;
 	case 53:
-		return "N_Zoth";
+		return "N'Zoth";
 		break;
 	case 54:
 		return "Onyxia";
@@ -464,106 +464,106 @@ std::string Champion::Find_Champion_NAME(Champ choice) {
 		return "Ozumat";
 		break;
 	case 56:
-		return "Prince_du_mal_Rafaam";
+		return "Prince du mal Rafaam";
 		break;
 	case 57:
-		return "Prince_marchand_Gallywix";
+		return "Prince marchand Gallywix";
 		break;
 	case 58:
 		return "Pyraride";
 		break;
 	case 59:
-		return "Ragnaros_seigneur_du_feu";
+		return "Ragnaros, seigneur du feu";
 		break;
 	case 60:
 		return "Rakanishu";
 		break;
 	case 61:
-		return "Reine_Azshara";
+		return "Reine Azshara";
 		break;
 	case 62:
-		return "Reno_Jakson";
+		return "Reno Jakson";
 		break;
 	case 63:
-		return "Roi_Mukla";
+		return "Roi Mukla";
 		break;
 	case 64:
 		return "Rokara";
 		break;
 	case 65:
-		return "Seigneur_Barov";
+		return "Seigneur Barov";
 		break;
 	case 66:
-		return "Seigneur_Jaraxxus";
+		return "Seigneur Jaraxxus";
 		break;
 	case 67:
-		return "Seigneur_Saurcroc";
+		return "Seigneur Saurcroc";
 		break;
 	case 68:
-		return "Silas_Sombrelune";
+		return "Silas Sombrelune";
 		break;
 	case 69:
 		return "Sindragosa";
 		break;
 	case 70:
-		return "Sir_Finley_Mrrglton";
+		return "Sir Finley Mrrglton";
 		break;
 	case 71:
-		return "Sire_Denathrius";
+		return "Sire Denathrius";
 		break;
 	case 72:
 		return "Sneed";
 		break;
 	case 73:
-		return "Souveraine_Cire_Reine";
+		return "Souveraine Cire-Reine";
 		break;
 	case 74:
-		return "Sylvanas_Coursevent";
+		return "Sylvanas Coursevent";
 		break;
 	case 75:
-		return "Tamsin_Roame";
+		return "Tamsin Roame";
 		break;
 	case 76:
-		return "Tavish_Foudrepique";
+		return "Tavish Foudrepique";
 		break;
 	case 77:
-		return "Tchak_Coupebeurre";
+		return "Tchak Coupebeurre";
 		break;
 	case 78:
-		return "Tess_Grisetete";
+		return "Tess Grisetête";
 		break;
 	case 79:
 		return "Tickatus";
 		break;
 	case 80:
-		return "Tokil_l_Infinie";
+		return "Tokil l'Infinie";
 		break;
 	case 81:
-		return "Vanndar_Foudreepique";
+		return "Vanndar Foudrepique";
 		break;
 	case 82:
-		return "Varden_Aubetreinte";
+		return "Varden Aubétreinte";
 		break;
 	case 83:
-		return "Vol_jin";
+		return "Vol'jin";
 		break;
 	case 84:
 		return "Xyrella";
 		break;
 	case 85:
-		return "Yogg_Saron_la_fin_de_l_espoir";
+		return "Yogg'Saron, la fin de l'espoir";
 		break;
 	case 86:
 		return "Ysera";
 		break;
 	case 87:
-		return "Y_Shaarj";
+		return "Y'Shaarj";
 		break;
 	case 88:
-		return "Zephrys_le_Grand";
+		return "Zéphrys le Grand";
 		break;
 	case 89:
-		return "Elise_Cheretoile";
+		return "Elise Cherchétoile";
 		break;
 	}
 }
