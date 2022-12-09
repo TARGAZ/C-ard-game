@@ -2,25 +2,26 @@
 #define _CARD_HPP_
 
 #include <string>
-
+#include "Effect.hpp"
 class Card
 {
-private :
+private:
 	std::string name;
 	int damage;
-	int PV;
+	int hp;
 	int armor;
 	int type;
 	int ability_id;
 	int cost;
 	int level;
+	Effect effect_card;
 
-public :
+public:
 	Card()
 	{
 		name = "Default";
 		damage = 0;
-		PV = 0;
+		hp = 0;
 		armor = 0;
 		type = 0;
 		ability_id = 0;
@@ -32,9 +33,9 @@ public :
 	{
 
 	}
-	
+
 	void FindAbility();
-	
+
 };
 
 
