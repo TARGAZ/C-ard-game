@@ -1,5 +1,7 @@
 
 #include "Game.hpp"
+#include "Champion.hpp"
+#include "Player.hpp"
 #include <iostream>
 
 
@@ -11,7 +13,7 @@ void Game::main_game()
 	game_menus();
 
 	//championChoice();
-	player.set_champion();
+	//player.set_champion(Champion champion);
 
 	while (1)
 	{
@@ -28,8 +30,11 @@ void Game::main_game()
 
 
 }
-void Game::startRound()
+void Game::startRound()//attribution des pièces
 {
+	int starting_money = 3;//pièces de départ | A CHANGER SELON CHAMPION
+	
+	player.get_money(nb_round, starting_money);//Gestion de l'ajout de pièces à chaque tour.
 
 }
 
