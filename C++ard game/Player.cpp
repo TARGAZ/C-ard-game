@@ -19,6 +19,7 @@ int Player::get_money(int nbround, int starting_money)//nbround vient de la clas
 		var = money + 1;
 	else//cas où le joueur a plus de 10 pièces, il n'en gagne pas d'autres.
 		var = money;
+
 	money = var;
 }
 
