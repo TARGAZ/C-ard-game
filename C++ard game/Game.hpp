@@ -40,8 +40,6 @@ public:
 
 	Player fight();
 
-	void downgradePlayer(Player loser);
-
 };
 
 #endif //_GAME_H

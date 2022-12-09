@@ -21,7 +21,6 @@ void Game::main_game()
 		openShop();
 
 		loser = fight();
-		downgradePlayer(loser);
 	}
 
 
@@ -41,11 +40,6 @@ void Game::openShop()
 Player Game::fight()
 {
 	return player;
-}
-
-void Game::downgradePlayer(Player loser)
-{
-
 }
 
 void Game::which_fighter()
