@@ -3,12 +3,14 @@
 #define _PLAYER_H
 
 #include <string>
+#include "Champion.hpp"
 
 class Player {
 private:
 	std::string name;
 	int money;
 	int level;
+	Champion champion;
 
 public:
 	Player()
@@ -23,7 +25,7 @@ public:
 		money = 0;
 		level = 0;
 	}
-	
+
 	~Player()
 	{
 
@@ -32,6 +34,7 @@ public:
 	int get_money(int money, int nbround);
 
 	void player_turn();
+	void set_champion(Champion champion);
 };
 
 #endif //_PLAYER_H                                                                                                                                                                                                                                                                                                                
