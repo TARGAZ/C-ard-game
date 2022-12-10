@@ -59,6 +59,7 @@ Player Game::fight()
 	if (player.getBoard().size() > opponent.getBoard().size())
 	{
 		//player start
+		player.getBoard();
 	}
 	else if (player.getBoard().size() < opponent.getBoard().size())
 	{

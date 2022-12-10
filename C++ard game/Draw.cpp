@@ -1,9 +1,11 @@
 #include "Draw.hpp"
+#include "Player.hpp"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
 #include <vector>
+
 
 
 void Draw::BuyPhase()
@@ -53,8 +55,8 @@ void Draw::CreateCardList()
 		all_card.push_back(card);
 	}
 }
-std::vector<Card*> Draw::getCardList() const{
-	{
-		return all_card;
-	}
-}
+//void Draw::getCardList(Player & player){
+//	{
+//		player.setCard(all_card);
+//	}
+//}

@@ -6,6 +6,7 @@
 #include <vector>
 #include "Champion.hpp"
 #include "Draw.hpp"
+#include "Card.hpp"
 
 
 class Player {

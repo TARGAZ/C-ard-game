@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "Player.hpp"
 #include "Card.hpp"
 
 class Draw
@@ -26,7 +27,9 @@ public:
 
 	void CreateCardList();
 	
-	std::vector<Card*> getCardList() const;
+	//void getCardList(Player & player);
+
+	
 };
 
 
