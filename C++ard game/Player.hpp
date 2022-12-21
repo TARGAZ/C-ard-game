@@ -37,7 +37,7 @@ public:
 	{
 
 	}
-
+	
 	int get_money(int money, int nbround);
 
 	void player_turn();

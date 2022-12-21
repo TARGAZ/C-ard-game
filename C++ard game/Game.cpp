@@ -68,6 +68,16 @@ Player Game::fight()
 	else
 	{
 		//randomise who start
+		srand((unsigned)time(0));
+		int random = rand() % 2;
+		if (random == 0)
+		{
+			//player start
+		}
+		else
+		{
+			//opponent start
+		}
 	}
 	
 	//Do the card fight ends when one of the player has no card on board
