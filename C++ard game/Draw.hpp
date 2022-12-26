@@ -26,8 +26,6 @@ public:
 	void BuyPhase();
 
 	void CreateCardList();
-	
-	//void getCardList(Player & player);
 
 	
 };

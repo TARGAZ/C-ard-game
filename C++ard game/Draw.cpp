@@ -53,10 +53,7 @@ void Draw::CreateCardList()
 		level = std::stoi(token);
 		Card* card = new Card(name, damage, hp, armor, type, ability_id, cost, level);
 		all_card.push_back(card);
+		nb_card++;
 	}
 }
-//void Draw::getCardList(Player & player){
-//	{
-//		player.setCard(all_card);
-//	}
-//}
+

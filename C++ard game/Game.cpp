@@ -13,7 +13,7 @@ void Game::main_game()
 	//championChoice();
 	//player.set_champion();
 
-	while (1)
+	/*while (1)
 	{
 		startRound();
 
@@ -22,8 +22,8 @@ void Game::main_game()
 
 		loser = fight();
 		downgradePlayer(loser);
-	}
-
+	}*/
+	player = fight();
 
 
 
@@ -54,7 +54,6 @@ Player Game::fight()
 	{
 		//apply the ability in the card class
 	}
-	
 	//start with the player with the most card on board or randomise who start
 	if (player.getBoard().size() > opponent.getBoard().size())
 	{
@@ -81,7 +80,10 @@ Player Game::fight()
 	}
 	
 	//Do the card fight ends when one of the player has no card on board
+	while (player.getBoard().size() < 0 || opponent.getBoard().size() < 0)
+	{
 
+	}
 
 	//calculate the damage to apply to the opponant
 

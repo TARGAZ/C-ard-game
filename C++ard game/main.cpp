@@ -17,8 +17,6 @@ int main()
 	Draw draw = Draw();
 	draw.CreateCardList();
 	draw;
-
-	player.getBoard();
 	
 	game.main_game();
 
