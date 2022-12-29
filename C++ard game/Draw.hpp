@@ -29,8 +29,7 @@ public:
 
 	std::vector<Card*> getCardList() {
 		return all_card;
-	}
-
+	};
 	
 };
 

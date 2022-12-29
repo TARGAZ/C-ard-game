@@ -10,9 +10,11 @@ void Game::main_game()
 	Player player = Player();
 	Player opponent = Player();
 	Draw draw = Draw();
+	Draw draw2 = Draw();
 	draw.CreateCardList();
+	draw2.CreateCardList();
 	player.setBoard(draw.getCardList(), player);
-	opponent.setBoard(draw.getCardList(), opponent);
+	opponent.setBoard(draw2.getCardList(), opponent);
 	game_menus();
 	//championChoice();
 	//player.set_champion();
@@ -27,9 +29,10 @@ void Game::main_game()
 		loser = fight();
 		downgradePlayer(loser);
 	}*/
-	player = fight(player, opponent);
+	fight(player, opponent);
 
 
+	std::cout << "fin du tour" << std::endl;
 
 }
 void Game::startRound()
@@ -42,12 +45,13 @@ void Game::openShop()
 
 }
 
-Player Game::fight(Player &player, Player &opponent)
+void Game::fight(Player &player, Player &opponent)
 {
 	//start of the fight
 	//apply appility of the champion if he pay it in shop
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> oboard = opponent.getBoard();
+	int whostart = 0;
 	int champoin_ability = 0; // need to chnage it
 	if (champoin_ability == 1)
 	{
@@ -64,10 +68,12 @@ Player Game::fight(Player &player, Player &opponent)
 	if (pboard.size() > oboard.size())
 	{
 		//player start
+		whostart = 1;
 	}
 	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
+		whostart = 2;
 	}
 	else
 	{
@@ -78,19 +84,45 @@ Player Game::fight(Player &player, Player &opponent)
 		{
 			//player start
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
+			whostart = 1;
 		}
 		else
 		{
 			//opponent start
 			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
+			whostart = 2;
 		}
 	}
 	
 	//Do the card fight ends when one of the player has no card on board
-	while (pboard.size() < 0 || oboard.size() < 0)
+	do
 	{
-		
-	}
+		//delete the first element of the board if hp <= 0
+		if (pboard[0]->getHp() <= 0)
+		{
+			auto p = pboard.begin();
+			pboard.erase(p);
+
+		}
+		if (oboard[0]->getHp() <= 0)
+		{
+			auto p = oboard.begin();
+			oboard.erase(p);
+		}
+		if (pboard.size() <= 0 || oboard.size() <= 0)
+		{
+			break;
+		}
+		if (whostart == 1)
+		{
+			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
+		}
+		if (whostart == 2)
+		{
+			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
+		}
+		(whostart == 1) ? whostart = 2 : (whostart == 2) ? whostart = 1 : whostart = 0;
+	} while (pboard.size() >= 0 || oboard.size() >= 0);
 
 	//calculate the damage to apply to the opponant
 
@@ -99,7 +131,8 @@ Player Game::fight(Player &player, Player &opponent)
 
 	
 	//ends of the fight
-	return player;
+	player.setBoard(pboard, player);
+	opponent.setBoard(oboard, opponent);
 }
 
 void Game::downgradePlayer(Player loser)

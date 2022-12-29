@@ -39,7 +39,7 @@ public:
 
 	void openShop();
 
-	Player fight(Player &player, Player &opponent);
+	void fight(Player &player, Player &opponent);
 
 	void downgradePlayer(Player loser);
 

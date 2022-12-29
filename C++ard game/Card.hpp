@@ -81,6 +81,16 @@ public:
 		return level;
 	}
 
+	Effect getEffectCard()
+	{
+		return effect_card;
+	}
+
+	std::string getName()
+	{
+		return name;
+	}
+
 	void setDamage(int damage)
 	{
 		this->damage = damage;
@@ -105,6 +115,27 @@ public:
 	{
 		this->level = level;
 	}
+	
+	void setCost(int cost)
+	{
+		this->cost = cost;
+	}
+	
+	void setAbilityId(int ability_id)
+	{
+		this->ability_id = ability_id;
+	}
+
+	void setEffectCard(Effect effect)
+	{
+		effect_card = effect;
+	}
+	
+	void setName(std::string name)
+	{
+		this->name = name;
+	}
+	
 };
 
 

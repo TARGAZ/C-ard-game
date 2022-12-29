@@ -57,3 +57,4 @@ void Draw::CreateCardList()
 	}
 }
 
+
