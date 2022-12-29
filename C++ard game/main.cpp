@@ -13,11 +13,13 @@
 int main()
 {
 	Game game = Game();
-	Player player = Player();
-	Draw draw = Draw();
-	draw.CreateCardList();
-	draw;
+	//Player player = Player();
+	//Draw draw = Draw();
+	//draw.CreateCardList();
+	//draw;
 	
+	//std::vector<Card*> all_card = draw.getCardList();
+	//player.setBoard(draw.getCardList(), player);
 	game.main_game();
 
 	return 0;

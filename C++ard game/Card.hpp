@@ -46,6 +46,65 @@ public:
 
 	void FindAbility();
 
+	int getDamage()
+	{
+		return damage;
+	}
+	
+	int getHp()
+	{
+		return hp;
+	}
+
+	int getArmor()
+	{
+		return armor;
+	}
+
+	int getType()
+	{
+		return type;
+	}
+
+	int getAbilityId()
+	{
+		return ability_id;
+	}
+
+	int getCost()
+	{
+		return cost;
+	}
+
+	int getLevel()
+	{
+		return level;
+	}
+
+	void setDamage(int damage)
+	{
+		this->damage = damage;
+	}
+	
+	void setHp(int hp)
+	{
+		this->hp = hp;
+	}
+
+	void setArmor(int armor)
+	{
+		this->armor = armor;
+	}
+
+	void setType(int type)
+	{
+		this->type = type;
+	}
+
+	void setLevel(int level)
+	{
+		this->level = level;
+	}
 };
 
 

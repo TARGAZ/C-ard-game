@@ -7,9 +7,13 @@
 void Game::main_game()
 {
 	Player& loser = player;
-
+	Player player = Player();
+	Player opponent = Player();
+	Draw draw = Draw();
+	draw.CreateCardList();
+	player.setBoard(draw.getCardList(), player);
+	opponent.setBoard(draw.getCardList(), opponent);
 	game_menus();
-
 	//championChoice();
 	//player.set_champion();
 
@@ -23,7 +27,7 @@ void Game::main_game()
 		loser = fight();
 		downgradePlayer(loser);
 	}*/
-	player = fight();
+	player = fight(player, opponent);
 
 
 
@@ -38,10 +42,12 @@ void Game::openShop()
 
 }
 
-Player Game::fight()
+Player Game::fight(Player &player, Player &opponent)
 {
 	//start of the fight
 	//apply appility of the champion if he pay it in shop
+	std::vector<Card*> pboard = player.getBoard();
+	std::vector<Card*> oboard = opponent.getBoard();
 	int champoin_ability = 0; // need to chnage it
 	if (champoin_ability == 1)
 	{
@@ -55,12 +61,11 @@ Player Game::fight()
 		//apply the ability in the card class
 	}
 	//start with the player with the most card on board or randomise who start
-	if (player.getBoard().size() > opponent.getBoard().size())
+	if (pboard.size() > oboard.size())
 	{
 		//player start
-		player.getBoard();
 	}
-	else if (player.getBoard().size() < opponent.getBoard().size())
+	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
 	}
@@ -72,17 +77,19 @@ Player Game::fight()
 		if (random == 0)
 		{
 			//player start
+			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 		}
 		else
 		{
 			//opponent start
+			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 		}
 	}
 	
 	//Do the card fight ends when one of the player has no card on board
-	while (player.getBoard().size() < 0 || opponent.getBoard().size() < 0)
+	while (pboard.size() < 0 || oboard.size() < 0)
 	{
-
+		
 	}
 
 	//calculate the damage to apply to the opponant
