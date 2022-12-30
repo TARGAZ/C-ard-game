@@ -43,7 +43,13 @@ public:
 	void player_turn();
 
 	std::vector<Card*> getBoard() {
-		return Board;
+		std::vector<Card*> rboard;
+		for (int i = 0; i < Board.size(); i++)
+		{
+			Card* temp = new Card(Board[i]->getName(), Board[i]->getDamage(), Board[i]->getHp(), Board[i]->getArmor(), Board[i]->getType(), Board[i]->getAbilityId(), Board[i]->getCost(), Board[i]->getLevel());
+			rboard.push_back(temp);
+		}
+		return rboard;
 	};
 
 	void setBoard(std::vector<Card*> Board, Player& player);

@@ -31,9 +31,7 @@ void Game::main_game()
 	}*/
 	fight(player, opponent);
 
-
 	std::cout << "fin du tour" << std::endl;
-
 }
 void Game::startRound()
 {
@@ -45,13 +43,15 @@ void Game::openShop()
 
 }
 
-void Game::fight(Player &player, Player &opponent)
+void Game::fight(Player player, Player opponent)
 {
 	//start of the fight
 	//apply appility of the champion if he pay it in shop
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> oboard = opponent.getBoard();
 	int whostart = 0;
+	srand((unsigned)time(0));
+	int random = rand() % 2;
 	int champoin_ability = 0; // need to chnage it
 	if (champoin_ability == 1)
 	{
@@ -78,18 +78,21 @@ void Game::fight(Player &player, Player &opponent)
 	else
 	{
 		//randomise who start
-		srand((unsigned)time(0));
-		int random = rand() % 2;
+
 		if (random == 0)
 		{
 			//player start
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
+			random = rand() % oboard.size();
+			//oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
+			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
 			whostart = 1;
 		}
 		else
 		{
 			//opponent start
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
+			random = rand() % pboard.size();
+			//pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
+			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
 			whostart = 2;
 		}
 	}
@@ -98,15 +101,15 @@ void Game::fight(Player &player, Player &opponent)
 	do
 	{
 		//delete the first element of the board if hp <= 0
-		if (pboard[0]->getHp() <= 0)
+		if (pboard[random]->getHp() <= 0)
 		{
-			auto p = pboard.begin();
+			auto p = pboard.begin() + random;
 			pboard.erase(p);
 
 		}
-		if (oboard[0]->getHp() <= 0)
+		if (oboard[random]->getHp() <= 0)
 		{
-			auto p = oboard.begin();
+			auto p = oboard.begin() + random;
 			oboard.erase(p);
 		}
 		if (pboard.size() <= 0 || oboard.size() <= 0)
@@ -115,24 +118,47 @@ void Game::fight(Player &player, Player &opponent)
 		}
 		if (whostart == 1)
 		{
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
+			random = rand() % pboard.size();
+			//pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
+			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
 		}
 		if (whostart == 2)
 		{
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
+			random = rand() % oboard.size();
+			//oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
+			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
 		}
 		(whostart == 1) ? whostart = 2 : (whostart == 2) ? whostart = 1 : whostart = 0;
 	} while (pboard.size() >= 0 || oboard.size() >= 0);
 
 	//calculate the damage to apply to the opponant
-
-	
+	if (pboard.size() <= 0)
+	{
+		//opponent win
+		//apply the damage to the opponent
+		int damage = 1;
+		for (int i = 0; i < oboard.size(); i++)
+		{
+			damage += oboard[i]->getCost();
+		}
+		//player.setChampionHp(player.getChampionHp() - damage);
+	}
+	else
+	{
+		//player win
+		//apply the damage to the player
+		int damage = 1;
+		for (int i = 0; i < pboard.size(); i++)
+		{
+			damage += pboard[i]->getCost();
+		}
+		//opponent.setChampionHp(opponent.getChampionHp() - damage);
+	}
 	//apply card end fight ability
 
 	
 	//ends of the fight
-	player.setBoard(pboard, player);
-	opponent.setBoard(oboard, opponent);
+	
 }
 
 void Game::downgradePlayer(Player loser)
