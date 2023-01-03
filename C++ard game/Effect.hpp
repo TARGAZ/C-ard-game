@@ -62,6 +62,24 @@ public:
 	{
 		return cri_de_guerre;
 	}
+
+
+	bool setBouclier(bool state)
+	{
+		bouclier = state;
+	}
+	bool setRaffalle_de_vent(bool state)
+	{
+		raffalle_de_vent = state;
+	}
+	bool setProvocation(bool state)
+	{
+		provocation = state;
+	}
+	bool setReincarnation(bool state)
+	{
+		reincarnation = state;
+	}
 };
 
 #endif //_EFFECT_H
