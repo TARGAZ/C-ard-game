@@ -50,10 +50,10 @@ void Game::fight(Player player, Player opponent)
 	//apply appility of the champion if he pay it in shop
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> oboard = opponent.getBoard();
-	int whostart = 0;
+	bool player_begin = false;
 	int random = rand() % 2;
-	int champoin_ability = 0; // need to chnage it
-	if (champoin_ability == 1)
+	int champion_ability = 0; // need to chnage it
+	if (champion_ability == 1)
 	{
 		//apply the ability in the champion class
 	}
@@ -68,16 +68,18 @@ void Game::fight(Player player, Player opponent)
 	if (pboard.size() > oboard.size())
 	{
 		//player start
+		
 		oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 		pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
-		whostart = 1;
+		player_begin = true;
 	}
 	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
+		
 		pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 		oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
-		whostart = 2;
+		player_begin = false;
 	}
 	else
 	{
@@ -86,16 +88,18 @@ void Game::fight(Player player, Player opponent)
 		if (random == 0)
 		{
 			//player start
+			
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
-			whostart = 1;
+			player_begin = true;
 		}
 		else
 		{
 			//opponent start
+			
 			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
-			whostart = 2;
+			player_begin = false;
 		}
 	}
 
@@ -118,18 +122,18 @@ void Game::fight(Player player, Player opponent)
 		{
 			break;
 		}
-		if (whostart == 1)
+		if (player_begin)
 		{
 			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 			
 		}
-		if (whostart == 2)
+		if (!player_begin)
 		{
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 		}
-		(whostart == 1) ? whostart = 2 : (whostart == 2) ? whostart = 1 : whostart = 0;
+		player_begin = !player_begin;
 	} while (pboard.size() >= 0 || oboard.size() >= 0);
 
 	//calculate the damage to apply to the opponant
