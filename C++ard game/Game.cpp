@@ -6,6 +6,8 @@
 
 void Game::main_game()
 {
+	srand((unsigned)time(0));
+
 	Player& loser = player;
 	Player player = Player();
 	Player opponent = Player();
@@ -50,7 +52,6 @@ void Game::fight(Player player, Player opponent)
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> oboard = opponent.getBoard();
 	int whostart = 0;
-	srand((unsigned)time(0));
 	int random = rand() % 2;
 	int champoin_ability = 0; // need to chnage it
 	if (champoin_ability == 1)
@@ -96,7 +97,7 @@ void Game::fight(Player player, Player opponent)
 			whostart = 2;
 		}
 	}
-	
+
 	//Do the card fight ends when one of the player has no card on board
 	do
 	{
@@ -157,9 +158,9 @@ void Game::fight(Player player, Player opponent)
 	}
 	//apply card end fight ability
 
-	
+
 	//ends of the fight
-	
+
 }
 
 void Game::downgradePlayer(Player loser)
