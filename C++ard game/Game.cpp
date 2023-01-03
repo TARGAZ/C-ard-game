@@ -8,7 +8,6 @@ void Game::main_game()
 {
 	srand((unsigned)time(0));
 
-	Player& loser = player;
 	Player player = Player();
 	Player opponent = Player();
 	Draw draw = Draw();
