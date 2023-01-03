@@ -68,11 +68,15 @@ void Game::fight(Player player, Player opponent)
 	if (pboard.size() > oboard.size())
 	{
 		//player start
+		random = rand() % oboard.size();
+		oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
 		whostart = 1;
 	}
 	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
+		random = rand() % pboard.size();
+		pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
 		whostart = 2;
 	}
 	else
@@ -120,8 +124,8 @@ void Game::fight(Player player, Player opponent)
 		{
 			random = rand() % pboard.size();
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-			//[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
-
+			//oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
+			
 		}
 		if (whostart == 2)
 		{
