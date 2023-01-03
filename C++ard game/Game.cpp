@@ -43,26 +43,36 @@ void Game::openShop()
 {
 
 }
-
+void Game::hit(Card* attacker, Card* adversary)
+{
+	if (adversary->getEffectCard().getBouclier() == false)
+	{
+		attacker->setHp(attacker->getHp() - adversary->getDamage());
+	}
+	else
+	{
+		adversary->getEffectCard().setBouclier(false);
+	}
+}
 void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
 {
 	int random = 0;
+	bool raffale = false;
 	for (int i = 0; i < attacker.size(); i++) // boucle pour raffalle de vent
 	{
 		if (attacker[i]->getEffectCard().getRaffalle_de_vent() == true)
 		{
+			raffale = true;
 			random = rand() % adversary.size();
-
-			if (adversary[random]->getEffectCard().getBouclier() == false)
-			{
-				attacker[i]->setHp(attacker[i]->getHp() - adversary[random]->getDamage());
-			}
-			else
-			{
-				adversary[random]->getEffectCard();
-			}
-			adversary[random]->setHp(adversary[random]->getHp() - attacker[i]->getDamage());
+			hit(attacker[i], adversary[random]);
+			hit(adversary[random], attacker[i]);
 		}
+	}
+	if (!raffale)
+	{
+		random = rand() % adversary.size();
+		hit(attacker[0], adversary[random]);
+		hit(adversary[random], attacker[0]);
 	}
 }
 

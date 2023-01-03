@@ -43,6 +43,8 @@ public:
 
 	void fight(Player player, Player opponent);
 
+	void hit(Card* attacker, Card* adversary);
+
 	void attack(std::vector<Card*> attacker, std::vector<Card*> adversary);
 
 	void downgradePlayer(Player loser);
