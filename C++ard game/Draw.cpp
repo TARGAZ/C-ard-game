@@ -34,6 +34,7 @@ void Draw::CreateCardList()
 	int provocation;
 	int réincarnation;
 	int rale_agony;
+	int cri_de_guerre;
 	while (std::getline(file, line))
 	{
 		std::stringstream ss(line);
@@ -64,6 +65,8 @@ void Draw::CreateCardList()
 		réincarnation = std::stoi(token);
 		std::getline(ss, token, ',');
 		rale_agony = std::stoi(token);
+		std::getline(ss, token, ',');
+		cri_de_guerre = std::stoi(token);
 		Card* card = new Card(name, damage, hp, type, cost, level);
 		all_card.push_back(card);
 		nb_card++;
