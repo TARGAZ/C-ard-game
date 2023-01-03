@@ -111,6 +111,10 @@ void Game::fight(Player player, Player opponent)
 		{
 			if (pboard[i]->getHp() <= 0)
 			{
+				if (pboard[i])
+				{
+
+				}
 				pboard.erase(pboard.begin());
 
 			}
