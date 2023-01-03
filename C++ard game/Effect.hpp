@@ -60,6 +60,32 @@ public:
 	{
 		return cri_de_guerre;
 	}
+
+	//get for all the effects
+	bool getBouclier()
+	{
+		return bouclier;
+	}
+	bool getRaffalle_de_vent()
+	{
+		return raffalle_de_vent;
+	}
+	bool getProvocation()
+	{
+		return provocation;
+	}
+	bool getReincarnation()
+	{
+		return reincarnation;
+	}
+	bool getRale_agony()
+	{
+		return rale_agony;
+	}
+	bool getCri_de_guerre()
+	{
+		return cri_de_guerre;
+	}
 };
 
 #endif //_EFFECT_H
