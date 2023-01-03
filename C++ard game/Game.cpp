@@ -52,7 +52,15 @@ void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
 		if (attacker[i]->getEffectCard().getRaffalle_de_vent() == true)
 		{
 			random = rand() % adversary.size();
-			attacker[i]->setHp(attacker[i]->getHp() - adversary[random]->getDamage());
+
+			if (adversary[random]->getEffectCard().getBouclier() == false)
+			{
+				attacker[i]->setHp(attacker[i]->getHp() - adversary[random]->getDamage());
+			}
+			else
+			{
+				adversary[random]->getEffectCard();
+			}
 			adversary[random]->setHp(adversary[random]->getHp() - attacker[i]->getDamage());
 		}
 	}
