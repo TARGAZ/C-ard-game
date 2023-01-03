@@ -129,20 +129,30 @@ void Game::fight(Player player, Player opponent)
 		{
 			if (pboard[i]->getHp() <= 0)
 			{
-				if (pboard[i])
+				if (pboard[i]->getEffectCard().getReincarnation() == true)
 				{
-
+					pboard[i]->setHp(1);
+					pboard[i]->getEffectCard().setReincarnation(false);
 				}
-				pboard.erase(pboard.begin());
-
+				else
+				{
+					pboard.erase(pboard.begin());
+				}
 			}
 		}
 		for (int i = 0; i < oboard.size(); i++)
 		{
-			if (oboard[i]->getHp() <= 0)
+			if (pboard[i]->getHp() <= 0)
 			{
-				oboard.erase(oboard.begin());
-
+				if (pboard[i]->getEffectCard().getReincarnation() == true)
+				{
+					pboard[i]->setHp(1);
+					pboard[i]->getEffectCard().setReincarnation(false);
+				}
+				else
+				{
+					pboard.erase(pboard.begin());
+				}
 			}
 		}
 		if (pboard.size() <= 0 || oboard.size() <= 0)
