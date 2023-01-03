@@ -60,7 +60,7 @@ void Game::fight(Player player, Player opponent)
 	}
 
 	//apply card effect if there is start fight ability
-	int card_ability = 0; // need to chnage it
+	int card_ability = 0; // need to change it
 	if (card_ability == 1)
 	{
 		//apply the ability in the card class

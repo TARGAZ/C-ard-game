@@ -31,6 +31,8 @@ public:
 
 	void main_game();
 
+	void downgradePlayer(Player loser);
+
 	void which_fighter();
 
 	int get_nb_round();
