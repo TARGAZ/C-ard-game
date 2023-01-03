@@ -25,7 +25,7 @@ int Player::get_money(int money, int nbround)//nbround vient de la classe Game
 	return var;
 }
 
-void Player::setBoard(std::vector<Card*> newBoard, Player& player)
+void Player::setBoard(std::vector<Card*> newBoard)
 {
-	player.Board = newBoard;
+	this->Board = newBoard;
 }

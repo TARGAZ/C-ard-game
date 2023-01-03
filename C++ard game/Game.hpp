@@ -13,6 +13,8 @@ private:
 	Player player;
 	Player opponent;
 
+	bool player_begin;
+
 public:
 	Game()
 	{
@@ -40,6 +42,8 @@ public:
 	void openShop();
 
 	void fight(Player player, Player opponent);
+
+	void attack(std::vector<Card*> attacker, std::vector<Card*> adversary);
 
 	void downgradePlayer(Player loser);
 

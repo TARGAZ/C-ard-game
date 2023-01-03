@@ -14,8 +14,8 @@ void Game::main_game()
 	Draw draw2 = Draw();
 	draw.CreateCardList();
 	draw2.CreateCardList();
-	player.setBoard(draw.getCardList(), player);
-	opponent.setBoard(draw2.getCardList(), opponent);
+	player.setBoard(draw.getCardList());
+	opponent.setBoard(draw2.getCardList());
 	game_menus();
 	//championChoice();
 	//player.set_champion();
@@ -44,15 +44,29 @@ void Game::openShop()
 
 }
 
+void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
+{
+	int random = 0;
+	for (int i = 0; i < attacker.size(); i++) // boucle pour raffalle de vent
+	{
+		if (attacker[i]->getEffectCard().getRaffalle_de_vent() == true)
+		{
+			random = rand() % adversary.size();
+			attacker[i]->setHp(attacker[i]->getHp() - adversary[random]->getDamage());
+			adversary[random]->setHp(adversary[random]->getHp() - attacker[i]->getDamage());
+		}
+	}
+}
+
 void Game::fight(Player player, Player opponent)
 {
 	//start of the fight
 	//apply appility of the champion if he pay it in shop
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> oboard = opponent.getBoard();
-	bool player_begin = false;
+	player_begin = false;
 	int random = rand() % 2;
-	int champion_ability = 0; // need to chnage it
+	int champion_ability = 0; // need to change it
 	if (champion_ability == 1)
 	{
 		//apply the ability in the champion class
@@ -68,37 +82,24 @@ void Game::fight(Player player, Player opponent)
 	if (pboard.size() > oboard.size())
 	{
 		//player start
-		random = rand() % oboard.size();
-		oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
-		pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 		player_begin = true;
 	}
 	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
-		random = rand() % pboard.size();
-		pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-		oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
 		player_begin = false;
 	}
 	else
 	{
 		//randomise who start
-
 		if (random == 0)
 		{
 			//player start
-			random = rand() % oboard.size();
-			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 			player_begin = true;
 		}
 		else
 		{
 			//opponent start
-			random = rand() % pboard.size();
-			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
 			player_begin = false;
 		}
 	}
@@ -110,8 +111,7 @@ void Game::fight(Player player, Player opponent)
 		{
 			if (pboard[i]->getHp() <= 0)
 			{
-				auto p = pboard.begin();
-				pboard.erase(p);
+				pboard.erase(pboard.begin());
 
 			}
 		}
@@ -119,8 +119,7 @@ void Game::fight(Player player, Player opponent)
 		{
 			if (oboard[i]->getHp() <= 0)
 			{
-				auto p = oboard.begin();
-				oboard.erase(p);
+				oboard.erase(oboard.begin());
 
 			}
 		}
@@ -130,16 +129,12 @@ void Game::fight(Player player, Player opponent)
 		}
 		if (player_begin)
 		{
-			random = rand() % pboard.size();
-			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
-			
+			attack(pboard, oboard);
+
 		}
 		if (!player_begin)
 		{
-			random = rand() % oboard.size();
-			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
+			attack(oboard, pboard);
 		}
 		player_begin = !player_begin;
 	} while (pboard.size() >= 0 || oboard.size() >= 0);

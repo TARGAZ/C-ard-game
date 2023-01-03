@@ -55,7 +55,7 @@ public:
 	{
 		return damage;
 	}
-	
+
 	int getHp()
 	{
 		return hp;
@@ -90,7 +90,7 @@ public:
 	{
 		this->damage = damage;
 	}
-	
+
 	void setHp(int hp)
 	{
 		this->hp = hp;
@@ -105,7 +105,7 @@ public:
 	{
 		this->level = level;
 	}
-	
+
 	void setCost(int cost)
 	{
 		this->cost = cost;
@@ -115,12 +115,14 @@ public:
 	{
 		effect_card = effect;
 	}
-	
+
 	void setName(std::string name)
 	{
 		this->name = name;
 	}
-	
+
+	void attack(Card* adversary);
+
 };
 
 

@@ -52,10 +52,10 @@ public:
 		return rboard;
 	};
 
-	void setBoard(std::vector<Card*> Board, Player& player);
-	
+	void setBoard(std::vector<Card*> Board);
+
 	void set_champion(Champion champion);
-	
+
 	//std::string getName();
 };
 
