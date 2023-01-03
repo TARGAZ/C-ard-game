@@ -3,13 +3,13 @@
 
 #include <string>
 #include <vector>
+#include "Player.hpp"
 #include "Card.hpp"
 
 class Draw
 {
 private:
 	std::vector<Card*> all_card;
-	//std::vector<Card&> deck;
 	int nb_card;
 
 public:
@@ -26,8 +26,11 @@ public:
 	void BuyPhase();
 
 	void CreateCardList();
+
+	std::vector<Card*> getCardList() {
+		return all_card;
+	};
 	
-	std::vector<Card*> getCardList() const;
 };
 
 

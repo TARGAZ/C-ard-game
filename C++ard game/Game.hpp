@@ -4,6 +4,7 @@
 #include <vector>
 #include <iostream>
 #include "Player.hpp"
+#include "Draw.hpp"
 
 class Game {
 private:
@@ -38,7 +39,7 @@ public:
 
 	void openShop();
 
-	Player fight();
+	void fight(Player player, Player opponent);
 
 };
 
