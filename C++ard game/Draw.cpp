@@ -15,7 +15,7 @@ void Draw::BuyPhase()
 
 void Draw::CreateCardList()
 {
-	std::string const file_name("carddata.txt");
+	std::string const file_name("C:/Users/tangu/Desktop/carddata.txt");
 	std::ifstream file;
 	file.open(file_name);
 	if (file.fail())
@@ -29,12 +29,12 @@ void Draw::CreateCardList()
 	int type;
 	int cost;
 	int level;
-	int bouclier;
-	int raffale_de_vent;
-	int provocation;
-	int réincarnation;
-	int rale_agony;
-	int cri_de_guerre;
+	bool bouclier;
+	bool raffale_de_vent;
+	bool provocation;
+	bool réincarnation;
+	bool rale_agony;
+	bool cri_de_guerre;
 	while (std::getline(file, line))
 	{
 		std::stringstream ss(line);
@@ -67,7 +67,7 @@ void Draw::CreateCardList()
 		rale_agony = std::stoi(token);
 		std::getline(ss, token, ',');
 		cri_de_guerre = std::stoi(token);
-		Card* card = new Card(name, damage, hp, type, cost, level);
+		Card* card = new Card(name, damage, hp, type, cost, level, bouclier, raffale_de_vent, provocation, réincarnation, rale_agony, cri_de_guerre);
 		all_card.push_back(card);
 		nb_card++;
 	}

@@ -46,7 +46,7 @@ public:
 		std::vector<Card*> rboard;
 		for (int i = 0; i < Board.size(); i++)
 		{
-			Card* temp = new Card(Board[i]->getName(), Board[i]->getDamage(), Board[i]->getHp(), Board[i]->getType(), Board[i]->getCost(), Board[i]->getLevel());
+			Card* temp = new Card(Board[i]->getName(), Board[i]->getDamage(), Board[i]->getHp(), Board[i]->getType(), Board[i]->getCost(), Board[i]->getLevel(), Board[i]->getEffectCard());
 			rboard.push_back(temp);
 		}
 		return rboard;

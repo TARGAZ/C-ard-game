@@ -22,6 +22,16 @@ public :
 		cri_de_guerre = false;
 	}
 	
+	Effect(bool bouclier, bool raffalle_de_vent, bool provocation, bool reincarnation, bool rale_agony, bool cri_de_guerre)
+	{
+		this->bouclier = bouclier;
+		this->raffalle_de_vent = raffalle_de_vent;
+		this->provocation = provocation;
+		this->reincarnation = reincarnation;
+		this->rale_agony = rale_agony;
+		this->cri_de_guerre = cri_de_guerre;
+	}
+	
 	~Effect()
 	{
 		
