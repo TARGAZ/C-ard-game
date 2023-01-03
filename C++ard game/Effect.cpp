@@ -8,11 +8,11 @@
 
 void Effect::ApplyEffect()
 {
-	if (shield = true)
+	if (bouclier = true)
 	{
 		//Apply shield effect
 	}
-	if (wind_fury = true)
+	if (raffalle_de_vent = true)
 	{
 		//Apply wind_fury effect
 	}
@@ -24,7 +24,7 @@ void Effect::ApplyEffect()
 	{
 		//Apply reincarnation effect
 	}
-	if (agony_rale = true)
+	if (rale_agony = true)
 	{
 		//Apply agony_rale effect
 	}

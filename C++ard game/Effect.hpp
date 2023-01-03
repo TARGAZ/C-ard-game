@@ -3,21 +3,23 @@
 
 class Effect {
 private:
-	bool shield;
-	bool wind_fury;
+	bool bouclier;
+	bool raffalle_de_vent;
 	bool provocation;
 	bool reincarnation;
-	bool agony_rale;
+	bool rale_agony;
+	bool cri_de_guerre;
 
 	void ApplyEffect();
 public :
 	Effect()
 	{
-		shield = false;
-		wind_fury = false;
+		bouclier = false;
+		raffalle_de_vent = false;
 		provocation = false;
 		reincarnation = false;
-		agony_rale = false;
+		rale_agony = false;
+		cri_de_guerre = false;
 	}
 	
 	~Effect()
@@ -27,3 +29,4 @@ public :
 };
 
 #endif //_EFFECT_H
+//Name // Damage // Hp // Type // Cost // Level // Effect
