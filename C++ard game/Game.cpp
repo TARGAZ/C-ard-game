@@ -45,13 +45,13 @@ void Game::openShop()
 }
 void Game::hit(Card* attacker, Card* adversary)
 {
-	if (adversary->getEffectCard().getBouclier() == false)
+	if (adversary->getRefEffectCard()->getBouclier() == false)
 	{
 		attacker->setHp(attacker->getHp() - adversary->getDamage());
 	}
 	else
 	{
-		adversary->getEffectCard().setBouclier(false);
+		adversary->getRefEffectCard()->setBouclier(false);
 	}
 }
 void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
@@ -60,7 +60,7 @@ void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
 	bool raffale = false;
 	for (int i = 0; i < attacker.size(); i++) // boucle pour raffalle de vent
 	{
-		if (attacker[i]->getEffectCard().getRaffalle_de_vent() == true)
+		if (attacker[i]->getRefEffectCard()->getRaffalle_de_vent() == true)
 		{
 			raffale = true;
 			random = rand() % adversary.size();
@@ -129,10 +129,10 @@ void Game::fight(Player player, Player opponent)
 		{
 			if (pboard[i]->getHp() <= 0)
 			{
-				if (pboard[i]->getEffectCard().getReincarnation() == true)
+				if (pboard[i]->getRefEffectCard()->getReincarnation() == true)
 				{
 					pboard[i]->setHp(1);
-					pboard[i]->getEffectCard().setReincarnation(false);
+					pboard[i]->getRefEffectCard()->setReincarnation(false);
 				}
 				else
 				{
@@ -144,10 +144,10 @@ void Game::fight(Player player, Player opponent)
 		{
 			if (oboard[i]->getHp() <= 0)
 			{
-				if (oboard[i]->getEffectCard().getReincarnation() == true)
+				if (oboard[i]->getRefEffectCard()->getReincarnation() == true)
 				{
 					oboard[i]->setHp(1);
-					oboard[i]->getEffectCard().setReincarnation(false);
+					oboard[i]->getRefEffectCard()->setReincarnation(false);
 				}
 				else
 				{

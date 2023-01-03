@@ -15,7 +15,7 @@ void Draw::BuyPhase()
 
 void Draw::CreateCardList()
 {
-	std::string const file_name("C:/Users/tangu/Desktop/carddata.txt");
+	std::string const file_name("carddata.txt");
 	std::ifstream file;
 	file.open(file_name);
 	if (file.fail())

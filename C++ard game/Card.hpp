@@ -81,6 +81,11 @@ public:
 		return effect_card;
 	}
 
+	Effect* getRefEffectCard()
+	{
+		return &effect_card;
+	}
+
 	std::string getName()
 	{
 		return name;
