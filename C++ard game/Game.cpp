@@ -109,12 +109,14 @@ void Game::fight(Player player, Player opponent)
 		{
 			auto p = pboard.begin() + random;
 			pboard.erase(p);
+			random = 0;
 
 		}
 		if (oboard[random]->getHp() <= 0)
 		{
 			auto p = oboard.begin() + random;
 			oboard.erase(p);
+			random = 0;
 		}
 		if (pboard.size() <= 0 || oboard.size() <= 0)
 		{
