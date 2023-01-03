@@ -68,17 +68,11 @@ void Game::fight(Player player, Player opponent)
 	if (pboard.size() > oboard.size())
 	{
 		//player start
-		random = rand() % oboard.size();
-		oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
-		pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 		player_begin = true;
 	}
 	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
-		random = rand() % pboard.size();
-		pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-		oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
 		player_begin = false;
 	}
 	else
@@ -88,17 +82,11 @@ void Game::fight(Player player, Player opponent)
 		if (random == 0)
 		{
 			//player start
-			random = rand() % oboard.size();
-			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 			player_begin = true;
 		}
 		else
 		{
 			//opponent start
-			random = rand() % pboard.size();
-			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
 			player_begin = false;
 		}
 	}
@@ -130,6 +118,17 @@ void Game::fight(Player player, Player opponent)
 		}
 		if (player_begin)
 		{
+	
+			for (int i = 0; i < pboard.size(); i++) // boucle pour raffalle de vent
+			{
+				if (pboard[i]->getEffectCard().getRaffalle_de_vent() == true)
+				{
+					random = rand() % oboard.size();
+					pboard[i]->setHp(pboard[i]->getHp() - oboard[random]->getDamage());
+					oboard[random]->setHp(oboard[random]->getHp() - pboard[i]->getDamage());
+				}
+			}
+
 			random = rand() % pboard.size();
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
