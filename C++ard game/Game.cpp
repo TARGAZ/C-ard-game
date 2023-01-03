@@ -83,16 +83,16 @@ void Game::fight(Player player, Player opponent)
 		{
 			//player start
 			random = rand() % oboard.size();
-			//oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
+			pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 			whostart = 1;
 		}
 		else
 		{
 			//opponent start
 			random = rand() % pboard.size();
-			//pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
+			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
 			whostart = 2;
 		}
 	}
@@ -119,14 +119,15 @@ void Game::fight(Player player, Player opponent)
 		if (whostart == 1)
 		{
 			random = rand() % pboard.size();
-			//pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
+			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
+			
 		}
 		if (whostart == 2)
 		{
 			random = rand() % oboard.size();
-			//oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
+			pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 		}
 		(whostart == 1) ? whostart = 2 : (whostart == 2) ? whostart = 1 : whostart = 0;
 	} while (pboard.size() >= 0 || oboard.size() >= 0);
