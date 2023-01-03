@@ -50,10 +50,10 @@ void Game::fight(Player player, Player opponent)
 	//apply appility of the champion if he pay it in shop
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> oboard = opponent.getBoard();
-	int whostart = 0;
+	bool player_begin = false;
 	int random = rand() % 2;
-	int champoin_ability = 0; // need to chnage it
-	if (champoin_ability == 1)
+	int champion_ability = 0; // need to chnage it
+	if (champion_ability == 1)
 	{
 		//apply the ability in the champion class
 	}
@@ -70,14 +70,14 @@ void Game::fight(Player player, Player opponent)
 		//player start
 		random = rand() % oboard.size();
 		oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
-		whostart = 1;
+		player_begin = true;
 	}
 	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
 		random = rand() % pboard.size();
 		pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-		whostart = 2;
+		player_begin = false;
 	}
 	else
 	{
@@ -89,7 +89,7 @@ void Game::fight(Player player, Player opponent)
 			random = rand() % oboard.size();
 			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
 			//pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
-			whostart = 1;
+			player_begin = true;
 		}
 		else
 		{
@@ -97,7 +97,7 @@ void Game::fight(Player player, Player opponent)
 			random = rand() % pboard.size();
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
 			//oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
-			whostart = 2;
+			player_begin = false;
 		}
 	}
 
@@ -120,20 +120,20 @@ void Game::fight(Player player, Player opponent)
 		{
 			break;
 		}
-		if (whostart == 1)
+		if (player_begin)
 		{
 			random = rand() % pboard.size();
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
 			//oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
-			
+
 		}
-		if (whostart == 2)
+		if (!player_begin)
 		{
 			random = rand() % oboard.size();
 			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
 			//pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 		}
-		(whostart == 1) ? whostart = 2 : (whostart == 2) ? whostart = 1 : whostart = 0;
+		player_begin = !player_begin;
 	} while (pboard.size() >= 0 || oboard.size() >= 0);
 
 	//calculate the damage to apply to the opponant
