@@ -69,7 +69,7 @@ void Game::fight(Player player, Player opponent)
 	if (pboard.size() > oboard.size())
 	{
 		//player start
-		
+
 		oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 		pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 		player_begin = true;
@@ -77,7 +77,7 @@ void Game::fight(Player player, Player opponent)
 	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
-		
+
 		pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 		oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 		player_begin = false;
@@ -89,7 +89,7 @@ void Game::fight(Player player, Player opponent)
 		if (random == 0)
 		{
 			//player start
-			
+
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 			player_begin = true;
@@ -97,7 +97,7 @@ void Game::fight(Player player, Player opponent)
 		else
 		{
 			//opponent start
-			
+
 			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 			player_begin = false;
@@ -110,14 +110,12 @@ void Game::fight(Player player, Player opponent)
 		//delete the first element of the board if hp <= 0
 		if (pboard[0]->getHp() <= 0)
 		{
-			auto p = pboard.begin();
-			pboard.erase(p);
+			pboard.erase(pboard.begin());
 
 		}
 		if (oboard[0]->getHp() <= 0)
 		{
-			auto p = oboard.begin();
-			oboard.erase(p);
+			oboard.erase(oboard.begin());
 		}
 		if (pboard.size() <= 0 || oboard.size() <= 0)
 		{
@@ -127,7 +125,7 @@ void Game::fight(Player player, Player opponent)
 		{
 			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
-			
+
 		}
 		if (!player_begin)
 		{
