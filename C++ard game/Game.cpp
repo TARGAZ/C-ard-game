@@ -106,17 +106,23 @@ void Game::fight(Player player, Player opponent)
 	//Do the card fight ends when one of the player has no card on board
 	do
 	{
-		//delete the first element of the board if hp <= 0
-		if (pboard[0]->getHp() <= 0)
+		for (int i = 0; i < pboard.size(); i++)
 		{
-			auto p = pboard.begin();
-			pboard.erase(p);
+			if (pboard[i]->getHp() <= 0)
+			{
+				auto p = pboard.begin();
+				pboard.erase(p);
 
+			}
 		}
-		if (oboard[0]->getHp() <= 0)
+		for (int i = 0; i < oboard.size(); i++)
 		{
-			auto p = oboard.begin();
-			oboard.erase(p);
+			if (oboard[i]->getHp() <= 0)
+			{
+				auto p = oboard.begin();
+				oboard.erase(p);
+
+			}
 		}
 		if (pboard.size() <= 0 || oboard.size() <= 0)
 		{
