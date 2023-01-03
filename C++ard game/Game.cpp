@@ -8,7 +8,6 @@ void Game::main_game()
 {
 	srand((unsigned)time(0));
 
-	Player& loser = player;
 	Player player = Player();
 	Player opponent = Player();
 	Draw draw = Draw();
@@ -85,7 +84,7 @@ void Game::fight(Player player, Player opponent)
 			//player start
 			random = rand() % oboard.size();
 			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
+			//pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 			whostart = 1;
 		}
 		else
@@ -93,7 +92,7 @@ void Game::fight(Player player, Player opponent)
 			//opponent start
 			random = rand() % pboard.size();
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
+			//oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
 			whostart = 2;
 		}
 	}
@@ -122,7 +121,7 @@ void Game::fight(Player player, Player opponent)
 			random = rand() % pboard.size();
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
 			//[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
-			
+
 		}
 		if (whostart == 2)
 		{
