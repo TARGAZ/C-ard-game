@@ -118,17 +118,6 @@ void Game::fight(Player player, Player opponent)
 		}
 		if (player_begin)
 		{
-	
-			for (int i = 0; i < pboard.size(); i++) // boucle pour raffalle de vent
-			{
-				if (pboard[i]->getEffectCard().getRaffalle_de_vent() == true)
-				{
-					random = rand() % oboard.size();
-					pboard[i]->setHp(pboard[i]->getHp() - oboard[random]->getDamage());
-					oboard[random]->setHp(oboard[random]->getHp() - pboard[i]->getDamage());
-				}
-			}
-
 			random = rand() % pboard.size();
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
 			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
