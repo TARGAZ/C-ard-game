@@ -121,14 +121,14 @@ void Game::fight(Player player, Player opponent)
 		{
 			random = rand() % pboard.size();
 			pboard[random]->setHp(pboard[random]->getHp() - oboard[0]->getDamage());
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
+			//[0]->setHp(oboard[0]->getHp() - pboard[random]->getDamage());
 			
 		}
 		if (whostart == 2)
 		{
 			random = rand() % oboard.size();
 			oboard[random]->setHp(oboard[random]->getHp() - pboard[0]->getDamage());
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
+			//pboard[0]->setHp(pboard[0]->getHp() - oboard[random]->getDamage());
 		}
 		(whostart == 1) ? whostart = 2 : (whostart == 2) ? whostart = 1 : whostart = 0;
 	} while (pboard.size() >= 0 || oboard.size() >= 0);

@@ -58,6 +58,8 @@ void Draw::CreateCardList()
 		provocation = std::stoi(token);
 		std::getline(ss, token, ',');
 		réincarnation = std::stoi(token);
+		std::getline(ss, token, ',');
+		rale_agony = std::stoi(token);
 		Card* card = new Card(name, damage, hp, type, cost, level);
 		all_card.push_back(card);
 		nb_card++;
