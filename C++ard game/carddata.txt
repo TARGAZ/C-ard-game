@@ -1,8 +1,8 @@
-Héros défunt,3,2,1,2545,3,1,1,1,1,1
-Sanglier,4,2,0,2543,3,1,1,1,1,1,1
-Championne sacrée,3,5,2,2555,3,2,1,1,1,1,1
-Drake de Frimarra,6,7,3,2544,3,4,1,1,1,1,1
-Rhonin,7,7,1,2546,3,5,1,1,1,1,1
-Dompteur de béliers,4,3,4,2552,3,2,1,1,1,1,1
+Heros defunt,3,2,1,2545,1,1,1,1,1,1
+Sanglier,4,2,0,2543,1,1,1,1,1,1,1
+Championne sacree,3,5,2,2555,1,2,1,1,1,1,1
+Drake de Frimarra,6,7,3,2544,1,4,1,1,1,1,1
+Rhonin,7,7,1,2546,1,5,1,1,1,1,1
+Dompteur de beliers,4,3,4,2552,1,2,1,1,1,1,1
 Anomalie actualisante,1,4,5,1,1,0,1,1,1,1,1
 -

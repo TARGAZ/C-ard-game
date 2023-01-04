@@ -37,9 +37,9 @@ public:
 
 	int get_nb_round();
 
-	void startRound();
+	void startRound(Player& player);
 
-	void openShop();
+	void openShop(Player& player, Draw draw);
 
 	void fight(Player player, Player opponent);
 

@@ -10,6 +10,10 @@
 
 void Draw::BuyPhase()
 {
+	
+
+
+
 
 }
 
