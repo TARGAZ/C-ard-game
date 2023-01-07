@@ -13,6 +13,8 @@ private:
 	Player player;
 	Player opponent;
 
+	bool player_begin;
+
 public:
 	Game()
 	{
@@ -31,8 +33,6 @@ public:
 
 	void main_game();
 
-	void downgradePlayer(Player loser);
-
 	void which_fighter();
 
 	int get_nb_round();
@@ -42,6 +42,12 @@ public:
 	void openShop(Player& player, Draw draw);
 
 	void fight(Player player, Player opponent);
+
+	void hit(Card* attacker, Card* adversary);
+
+	void attack(std::vector<Card*> attacker, std::vector<Card*> adversary);
+
+	void downgradePlayer(Player loser);
 
 };
 

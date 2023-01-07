@@ -22,7 +22,7 @@ void Player::set_champion_automaticly()
 
 
 
-void Player::setBoard(std::vector<Card*> newBoard, Player& player)
+void Player::setBoard(std::vector<Card*> newBoard)
 {
-	player.Board = newBoard;
+	this->Board = newBoard;
 }

@@ -103,15 +103,14 @@ public:
 		std::vector<Card*> rboard;
 		for (int i = 0; i < Board.size(); i++)
 		{
-			Card* temp = new Card(Board[i]->getName(), Board[i]->getDamage(), Board[i]->getHp(), Board[i]->getType(), Board[i]->getCost(), Board[i]->getLevel());
+			Card* temp = new Card(Board[i]->getName(), Board[i]->getDamage(), Board[i]->getHp(), Board[i]->getType(), Board[i]->getCost(), Board[i]->getLevel(), Board[i]->getEffectCard());
 			rboard.push_back(temp);
 		}
 		return rboard;
 	};
 
-	void setBoard(std::vector<Card*> Board, Player& player);
+	void setBoard(std::vector<Card*> Board, Player& player);//Adrien
 	
-	//void set_champion(Champion champion);
 	Champion get_champion(Player& player) {
 		return player.champion;
 	};
@@ -119,6 +118,9 @@ public:
 	std::string get_name(Player& player) {
 		return player.name;
 	};
+	void setBoard(std::vector<Card*> Board);//tanguy
+
+	void set_champion(Champion champion);
 };
 
 #endif //_PLAYER_H                                                                                                                                                                                                                                                                                                                

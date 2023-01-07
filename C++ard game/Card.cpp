@@ -2,5 +2,5 @@
 
 void Card::FindAbility()
 {
-	
+
 }
