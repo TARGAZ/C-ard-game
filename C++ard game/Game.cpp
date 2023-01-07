@@ -2,31 +2,32 @@
 #include "Game.hpp"
 #include <iostream>
 
-
-
-void Game::main_game()
+void Game::main_game()//Boucle principale du jeu
 {
-	//initalisation
+	//Initialisations
 	srand((unsigned)time(0));
 	Player player = Player();
 	Player opponent = Player();
 	Draw draw = Draw();
 	draw.CreateCardList();
-	//Creation des joueurs
+	
+	//Création des joueurs
 	game_menus(player);
 	player.set_champion();
-	opponent.set_champion_automaticly();
+	opponent.set_champion_automatically();
 
 	while (1)
 	{
+		//initialise un round, définit l'argent attribué etc
 		startRound(player);
 
-
+		//gestion du shop pour les 2 joueurs
 		openShop(player, draw);
 		openShop(opponent, draw);
 
+		//Gestion du combat entre les 2 joueurs
 		fight(player, opponent);
-		//downgradePlayer(loser);
+		
 		std::cout << "fin du round" << std::endl;
 	}
 
@@ -34,17 +35,15 @@ void Game::main_game()
 }
 void Game::startRound(Player& player)
 {
-	nb_round = nb_round + 1;
-	int cost_taverne = player.get_cost_levelup(player);
-	if (cost_taverne != 0) {
+	nb_round = nb_round + 1;//On incrémente le nombre de round
+	int cost_taverne = player.get_cost_levelup(player);//on définit le cout de l'amélioration du niveau de taverne
+	
+	if (cost_taverne != 0)
 		player.set_cost_levelup(cost_taverne - 1);
-	}
-	if (nb_round < 9) {
+	if (nb_round < 9)
 		player.set_money(2 + nb_round);
-	}
-	else {
+	else
 		player.set_money(10);
-	}
 
 }
 
@@ -56,7 +55,7 @@ void Game::openShop(Player& player, Draw draw)
 	std::vector<Card*> pShop = player.getShop();
 	int freeze = player.get_freeze(player);
 	int level = player.get_level(player);
-	int money = 50;//player.get_money(player);
+	int money = player.get_money(player);
 	int cost_level_up = player.get_cost_levelup(player);
 	std::vector<Card*> possible_card = draw.get_possible_card(draw.getCardList(), level);
 	std::string name_player = player.get_name(player);

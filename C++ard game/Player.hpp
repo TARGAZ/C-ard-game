@@ -71,7 +71,7 @@ public:
 	};
 	void player_turn();
 	void set_champion();
-	void set_champion_automaticly();
+	void set_champion_automatically();
 
 	std::vector<Card*> getHand() {
 		std::vector<Card*> rhand;
