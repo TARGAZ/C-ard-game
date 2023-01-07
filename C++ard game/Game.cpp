@@ -32,6 +32,16 @@ void Game::main_game()//Boucle principale du jeu
 		fight(&player, &opponent);
 
 		std::cout << "fin du round" << std::endl;
+		if (player.get_champion()->get_hp() <= 0)
+		{
+			std::cout << "Player 2 won !" << std::endl;
+			break;
+		}
+		if (opponent.get_champion()->get_hp() <= 0)
+		{
+			std::cout << "Player " << player.get_name() << " won !" << std::endl;
+			break;
+		}
 	}
 
 	std::cout << "fin du jeu" << std::endl;
