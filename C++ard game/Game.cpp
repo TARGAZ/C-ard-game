@@ -14,20 +14,16 @@ void Game::main_game()
 	Draw draw2 = Draw();
 	draw.CreateCardList();
 	draw2.CreateCardList();
-	player.setBoard(draw.getCardList(), player);
-	opponent.setBoard(draw2.getCardList(), opponent);
+	player.setBoard(draw.getCardList());
+	opponent.setBoard(draw2.getCardList());
 	game_menus();
-
-	player.set_champion();
-	opponent.set_champion_automaticly();
+	//championChoice();
+	//player.set_champion();
 
 	/*while (1)
 	{
 		startRound();
-
-
 		openShop();
-
 		loser = fight();
 		downgradePlayer(loser);
 	}*/
@@ -44,6 +40,38 @@ void Game::openShop()
 {
 
 }
+void Game::hit(Card* attacker, Card* adversary)
+{
+	if (adversary->getRefEffectCard()->getBouclier() == false)
+	{
+		attacker->setHp(attacker->getHp() - adversary->getDamage());
+	}
+	else
+	{
+		adversary->getRefEffectCard()->setBouclier(false);
+	}
+}
+void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
+{
+	int random = 0;
+	bool raffale = false;
+	for (int i = 0; i < attacker.size(); i++) // boucle pour raffalle de vent
+	{
+		if (attacker[i]->getRefEffectCard()->getRaffalle_de_vent() == true)
+		{
+			raffale = true;
+			random = rand() % adversary.size();
+			hit(attacker[i], adversary[random]);
+			hit(adversary[random], attacker[i]);
+		}
+	}
+	if (!raffale)
+	{
+		random = rand() % adversary.size();
+		hit(attacker[0], adversary[random]);
+		hit(adversary[random], attacker[0]);
+	}
+}
 
 void Game::fight(Player player, Player opponent)
 {
@@ -51,16 +79,16 @@ void Game::fight(Player player, Player opponent)
 	//apply appility of the champion if he pay it in shop
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> oboard = opponent.getBoard();
-	bool player_begin = false;
+	player_begin = false;
 	int random = rand() % 2;
-	int champion_ability = 0; // need to chnage it
+	int champion_ability = 0; // need to change it
 	if (champion_ability == 1)
 	{
 		//apply the ability in the champion class
 	}
 
 	//apply card effect if there is start fight ability
-	int card_ability = 0; // need to change it
+	int card_ability = 0; // need to chnage it
 	if (card_ability == 1)
 	{
 		//apply the ability in the card class
@@ -69,37 +97,24 @@ void Game::fight(Player player, Player opponent)
 	if (pboard.size() > oboard.size())
 	{
 		//player start
-
-		oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
-		pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 		player_begin = true;
 	}
 	else if (pboard.size() < oboard.size())
 	{
 		//opponent start
-
-		pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
-		oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 		player_begin = false;
 	}
 	else
 	{
 		//randomise who start
-
 		if (random == 0)
 		{
 			//player start
-
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
 			player_begin = true;
 		}
 		else
 		{
 			//opponent start
-
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
 			player_begin = false;
 		}
 	}
@@ -107,15 +122,35 @@ void Game::fight(Player player, Player opponent)
 	//Do the card fight ends when one of the player has no card on board
 	do
 	{
-		//delete the first element of the board if hp <= 0
-		if (pboard[0]->getHp() <= 0)
+		for (int i = 0; i < pboard.size(); i++)
 		{
-			pboard.erase(pboard.begin());
-
+			if (pboard[i]->getHp() <= 0)
+			{
+				if (pboard[i]->getRefEffectCard()->getReincarnation() == true)
+				{
+					pboard[i]->setHp(1);
+					pboard[i]->getRefEffectCard()->setReincarnation(false);
+				}
+				else
+				{
+					pboard.erase(pboard.begin());
+				}
+			}
 		}
-		if (oboard[0]->getHp() <= 0)
+		for (int i = 0; i < oboard.size(); i++)
 		{
-			oboard.erase(oboard.begin());
+			if (oboard[i]->getHp() <= 0)
+			{
+				if (oboard[i]->getRefEffectCard()->getReincarnation() == true)
+				{
+					oboard[i]->setHp(1);
+					oboard[i]->getRefEffectCard()->setReincarnation(false);
+				}
+				else
+				{
+					oboard.erase(oboard.begin());
+				}
+			}
 		}
 		if (pboard.size() <= 0 || oboard.size() <= 0)
 		{
@@ -123,14 +158,12 @@ void Game::fight(Player player, Player opponent)
 		}
 		if (player_begin)
 		{
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
+			attack(pboard, oboard);
 
 		}
 		if (!player_begin)
 		{
-			oboard[0]->setHp(oboard[0]->getHp() - pboard[0]->getDamage());
-			pboard[0]->setHp(pboard[0]->getHp() - oboard[0]->getDamage());
+			attack(oboard, pboard);
 		}
 		player_begin = !player_begin;
 	} while (pboard.size() >= 0 || oboard.size() >= 0);
@@ -200,4 +233,3 @@ int Game::get_nb_round()
 {
 	return nb_round;
 }
-
