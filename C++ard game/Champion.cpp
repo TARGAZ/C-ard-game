@@ -320,9 +320,21 @@ void Champion::Validation_Champion(Champ choice) {
 
 
 }
-/*std::string get_name_champion(Champion& champion_player) {
-	return champion_player.name;
-};*/
-void Champion::ability_effect() {
 
+std::string Champion::get_name_champion() {
+	return name;
 }
+
+int Champion::get_hp() {
+	return hp;
+}
+
+int Champion::get_armor() {
+	return armor;
+}
+
+void Champion::take_damage(int damage)
+{
+	hp = hp - damage;
+}
+
