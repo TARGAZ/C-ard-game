@@ -42,7 +42,7 @@ public:
 	{
 		return bouclier;
 	}
-	bool getrafale_de_vent()
+	bool getRafale_de_vent()
 	{
 		return rafale_de_vent;
 	}
