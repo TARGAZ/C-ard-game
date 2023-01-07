@@ -5,7 +5,7 @@ Collectionneur de coquillages,3,1,7,1,1,0,0,0,0,0,0
 Dragonnet rouge,2,2,3,1,1,0,0,0,0,0,0
 Fine bouche,1,1,8,1,1,0,0,0,1,0,0
 Frappeur des marais,1,4,6,1,1,0,0,0,0,0,0
-Hyène charognarde,2,2,9,1,1,0,0,0,0,0,0
+Hyene charognarde,2,2,9,1,1,0,0,0,0,0,0
 Micromomie,1,2,10,1,1,0,0,0,0,0,0
 Mousse du pont,2,2,11,1,1,0,0,0,0,0,0
 Robo-toutou,2,1,10,1,1,1,0,0,0,0,0
@@ -24,7 +24,7 @@ Gardien des glyphes,2,4,8,2,1,0,0,0,0,0,0
 AnoYo-oh-Ogre,3,6,11,2,1,0,1,0,0,0,0
 AnoRoche en fusion,2,4,5,2,1,0,1,0,0,0,0
 Ara monstrueux,5,3,9,3,1,0,1,0,0,0,0
-Kathra'natir,5,4,8,3,1,0,0,1,1,0,0
+Kathra natir,5,4,8,3,1,0,0,1,1,0,0
 Maitre-chien,4,3,0,3,1,1,1,0,0,0,0
 Pashamar la vengeresse,4,5,7,3,1,1,0,1,0,0,0
 Faceless Disciple,6,4,9,3,1,0,1,0,1,0,0
@@ -36,8 +36,8 @@ Agamaggan,6,6,9,5,1,1,1,0,1,0,0
 Baron Vaillefendre,2,8,0,5,1,1,1,1,0,0,0
 Chevalier dos-hirsute,5,8,9,5,1,0,1,0,1,0,0
 Seigneur du vide,3,9,8,5,1,1,0,1,1,0,0
-Amiral de l'effroi Eliza,6,7,11,6,1,1,1,1,1,0,0
-Gangroptete affamé,9,5,8,6,1,1,1,0,1,0,0
+Amiral de l effroi Eliza,6,7,11,6,1,1,1,1,1,0,0
+Gangroptete affame,9,5,8,6,1,1,1,0,1,0,0
 Kalegos. Aspect des Arcanes,4,12,3,6,1,1,0,1,1,0,0
 -
 Name Damage Hp Type Cost Level Bouclier raf prov réa rale cri
