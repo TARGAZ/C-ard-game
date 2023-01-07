@@ -78,7 +78,8 @@ void Game::openShop(Player& player, Draw draw)
 	while (1) {
 		//affichage du shop
 		system("cls");
-		std::cout << "					SHOP			"<< name_player <<":   "<< name_champ.get_name_champion() << std::endl << std::endl;
+		std::cout << "					SHOP			" << name_player << ":   " << name_champ.get_name_champion() << std::endl;
+		std::cout << "					    			" <<"HP:   " << name_champ.get_hp() <<"    Armor:   " << name_champ.get_armor() << std::endl << std::endl;
 		//Money
 		std::cout << "    Money:   " << money << "          PRESS 1: REROLL SHOP" << "          PRESS 2: FREEZE SHOP : ";
 		if (freeze == 1) {
@@ -205,7 +206,7 @@ void Game::openShop(Player& player, Draw draw)
 			else if (answerchar == "6") answer = 6;
 			else if (answerchar == "7") answer = 7;
 			if (pboard.size() < 4) {
-				if (0 < answer < 7) {
+				if (0 < answer && answer < 7) {
 					if (pHand.size() >((static_cast<unsigned long long>(answer) - 1))) {
 						Card* card = new Card(*pHand[answer - 1]);
 						pboard.push_back(card);
@@ -223,7 +224,7 @@ void Game::openShop(Player& player, Draw draw)
 			else if (answerchar == "3") answer = 3;
 			else if (answerchar == "4") answer = 4;
 			else if (answerchar == "5") answer = 5;
-			if (0 < answer < 5) {
+			if (0 < answer && answer < 5) {
 				int first = 0;
 				first = answer;
 				answerchar = "0";
@@ -234,7 +235,7 @@ void Game::openShop(Player& player, Draw draw)
 				else if (answerchar == "3") answer = 3;
 				else if (answerchar == "4") answer = 4;
 				else if (answerchar == "5") answer = 5;
-				if (0 < answer < 5) {
+				if (0 < answer && answer < 5) {
 					int second = 0;
 					second = answer;
 					if (pboard.size() > ((static_cast<unsigned long long>(first) - 1))) {
@@ -256,7 +257,7 @@ void Game::openShop(Player& player, Draw draw)
 			else if (answerchar == "3") answer = 3;
 			else if (answerchar == "4") answer = 4;
 			else if (answerchar == "5") answer = 5;
-			if (0 < answer < 4) {
+			if (0 < answer && answer < 4) {
 				if (pboard.size() > ((static_cast<unsigned long long>(answer) - 1)))
 				pboard.erase(pboard.begin() + (answer - 1));
 				money = money + 1;
@@ -451,7 +452,6 @@ void Game::game_menus(Player& player)
 	std::string playername;
 	std::cin >> playername;
 	player.set_name(playername);
-	//std::cout << player.get_name(player);
 }
 
 void Game::draw_title()

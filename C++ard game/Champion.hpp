@@ -51,7 +51,13 @@ public:
 	}
 	std::string get_name_champion() {
 		return name;
-	};
+	}
+	int get_hp() {
+		return hp;
+	}
+	int get_armor() {
+		return armor;
+	}
 };
 Champ Find_Champion_Proposition();
 Champ Champion_Proposition();

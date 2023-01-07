@@ -77,7 +77,7 @@ public:
 		std::vector<Card*> rhand;
 		for (int i = 0; i < Hand.size(); i++)
 		{
-			Card* temp = new Card(Hand[i]->getName(), Hand[i]->getDamage(), Hand[i]->getHp(), Hand[i]->getType(), Hand[i]->getCost(), Hand[i]->getLevel());
+			Card* temp = new Card(Hand[i]->getName(), Hand[i]->getDamage(), Hand[i]->getHp(), Hand[i]->getType(), Hand[i]->getCost(), Hand[i]->getLevel(), Hand[i]->getEffectCard());
 			rhand.push_back(temp);
 		}
 		return rhand;
@@ -90,7 +90,7 @@ public:
 		std::vector<Card*> rShop;
 		for (int i = 0; i < Shop.size(); i++)
 		{
-			Card* temp = new Card(Shop[i]->getName(), Shop[i]->getDamage(), Shop[i]->getHp(), Shop[i]->getType(), Shop[i]->getCost(), Shop[i]->getLevel());
+			Card* temp = new Card(Shop[i]->getName(), Shop[i]->getDamage(), Shop[i]->getHp(), Shop[i]->getType(), Shop[i]->getCost(), Shop[i]->getLevel(), Shop[i]->getEffectCard());
 			rShop.push_back(temp);
 		}
 		return rShop;
@@ -118,9 +118,8 @@ public:
 	std::string get_name(Player& player) {
 		return player.name;
 	};
-	void setBoard(std::vector<Card*> Board);//tanguy
+	//void setBoard(std::vector<Card*> Board);//tanguy
 
-	void set_champion(Champion champion);
 };
 
 #endif //_PLAYER_H                                                                                                                                                                                                                                                                                                                

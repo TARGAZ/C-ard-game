@@ -20,9 +20,12 @@ void Player::set_champion_automaticly()
 	name = "Not Bob";
 }
 
+void Player::setBoard(std::vector<Card*> newBoard, Player& player)
+{
+	player.Board = newBoard;
+}
 
-
-void Player::setBoard(std::vector<Card*> newBoard)
+/*void Player::setBoard(std::vector<Card*> newBoard)
 {
 	this->Board = newBoard;
-}
+}*/
