@@ -12,7 +12,7 @@ void Effect::ApplyEffect()
 	{
 		//Apply shield effect
 	}
-	if (raffalle_de_vent = true)
+	if (rafale_de_vent = true)
 	{
 		//Apply wind_fury effect
 	}
