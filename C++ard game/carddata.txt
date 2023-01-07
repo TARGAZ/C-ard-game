@@ -26,7 +26,7 @@ AnoRoche en fusion,2,4,5,2,1,0,1,0,0,0,0
 Ara monstrueux,5,3,9,3,1,0,1,0,0,0,0
 Kathra'natir,5,4,8,3,1,0,0,1,1,0,0
 Maitre-chien,4,3,0,3,1,1,1,0,0,0,0
-Pashamar l a vengeresse,4,5,7,3,1,1,0,1,0,0,0
+Pashamar la vengeresse,4,5,7,3,1,1,0,1,0,0,0
 Faceless Disciple,6,4,9,3,1,0,1,0,1,0,0
 Atramedes,3,6,3,4,1,0,1,0,1,0,0
 Auspice funeste impatient,2,6,0,4,1,0,1,0,1,0,0
