@@ -31,14 +31,6 @@ public:
 		freeze_shop = 0;
 		cost_levelup = 6;
 	}
-	Player(std::string player_name)
-	{
-		name = player_name;
-		money = 3;
-		level = 1;
-		freeze_shop = 0;
-		cost_levelup = 6;
-	}
 
 	~Player()
 	{
@@ -50,6 +42,9 @@ public:
 	};
 	void set_money(int newMoney) {
 		money = newMoney;
+	};
+	void set_name(std::string nameof) {
+		name = nameof;
 	};
 	int get_freeze(Player& player) {
 		return player.freeze_shop;
@@ -116,10 +111,14 @@ public:
 
 	void setBoard(std::vector<Card*> Board, Player& player);
 	
-	void set_champion(Champion champion);
+	//void set_champion(Champion champion);
+	Champion get_champion(Player& player) {
+		return player.champion;
+	};
 
-	
-	//std::string getName();
+	std::string get_name(Player& player) {
+		return player.name;
+	};
 };
 
 #endif //_PLAYER_H                                                                                                                                                                                                                                                                                                                

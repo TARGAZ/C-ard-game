@@ -17,6 +17,7 @@ void Player::set_champion()
 void Player::set_champion_automaticly()
 {
 	champion.Validation_Champion(Find_Champion_Proposition());
+	name = "Not Bob";
 }
 
 

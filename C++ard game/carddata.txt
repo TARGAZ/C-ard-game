@@ -1,8 +1,43 @@
-Heros defunt,3,2,1,2545,1,1,1,1,1,1
-Sanglier,4,2,0,2543,1,1,1,1,1,1,1
-Championne sacree,3,5,2,2555,1,2,1,1,1,1,1
-Drake de Frimarra,6,7,3,2544,1,4,1,1,1,1,1
-Rhonin,7,7,1,2546,1,5,1,1,1,1,1
-Dompteur de beliers,4,3,4,2552,1,2,1,1,1,1,1
-Anomalie actualisante,1,4,5,1,1,0,1,1,1,1,1
+Anomalie actualisante,1,4,5,1,1,0,0,0,0,0,0
+Chasseur rochecave,2,3,6,1,1,0,0,0,0,0,0
+Chromaile evolutive,1,4,3,1,1,0,0,1,0,0,0
+Collectionneur de coquillages,3,1,7,1,1,0,0,0,0,0,0
+Dragonnet rouge,2,2,3,1,1,0,0,0,0,0,0
+Fine bouche,1,1,8,1,1,0,0,0,1,0,0
+Frappeur des marais,1,4,6,1,1,0,0,0,0,0,0
+Hyène charognarde,2,2,9,1,1,0,0,0,0,0,0
+Micromomie,1,2,10,1,1,0,0,0,0,0,0
+Mousse du pont,2,2,11,1,1,0,0,0,0,0,0
+Robo-toutou,2,1,10,1,1,1,0,0,0,0,0
+Elemenplus,2,2,5,1,1,0,0,0,0,0,0
+Client genereux,2,2,0,1,1,0,0,0,0,0,0
+Dozy Whelp,0,4,3,1,1,0,0,1,0,0,0
+Fine bouche,1,1,8,1,1,0,1,0,0,0,0
+Bondisseur dent-de-metal,3,3,10,2,1,0,0,0,0,0,0
+Bourdissa,2,4,6,2,1,0,0,0,1,0,0
+Capitaine des mers du sud,3,3,11,2,1,0,0,0,0,0,0
+Chauffard huran,2,4,0,2,1,0,0,1,0,0,0
+Chef de guerre murloc,3,3,6,2,1,0,1,0,0,0,0
+Defense-robuste,5,3,0,2,1,1,0,0,0,0,0
+Embrouillement,3,2,8,2,1,0,0,0,1,0,0
+Gardien des glyphes,2,4,8,2,1,0,0,0,0,0,0
+AnoYo-oh-Ogre,3,6,11,2,1,0,1,0,0,0,0
+AnoRoche en fusion,2,4,5,2,1,0,1,0,0,0,0
+Ara monstrueux,5,3,9,3,1,0,1,0,0,0,0
+Kathra'natir,5,4,8,3,1,0,0,1,1,0,0
+Maitre-chien,4,3,0,3,1,1,1,0,0,0,0
+Pashamar l a vengeresse,4,5,7,3,1,1,0,1,0,0,0
+Faceless Disciple,6,4,9,3,1,0,1,0,1,0,0
+Atramedes,3,6,3,4,1,0,1,0,1,0,0
+Auspice funeste impatient,2,6,0,4,1,0,1,0,1,0,0
+Cogneur,3,7,9,4,1,1,0,1,0,0,0
+Elementaire du feu de brousse,7,4,5,4,1,1,1,0,0,0,0
+Agamaggan,6,6,9,5,1,1,1,0,1,0,0
+Baron Vaillefendre,2,8,0,5,1,1,1,1,0,0,0
+Chevalier dos-hirsute,5,8,9,5,1,0,1,0,1,0,0
+Seigneur du vide,3,9,8,5,1,1,0,1,1,0,0
+Amiral de l'effroi Eliza,6,7,11,6,1,1,1,1,1,0,0
+Gangroptete affamé,9,5,8,6,1,1,1,0,1,0,0
+Kalegos. Aspect des Arcanes,4,12,3,6,1,1,0,1,1,0,0
 -
+Name Damage Hp Type Cost Level Bouclier raf prov réa rale cri

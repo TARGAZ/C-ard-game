@@ -17,7 +17,7 @@ public:
 	Game()
 	{
 		nb_round = 0;
-		opponent = Player("Bot Bob");
+		opponent.set_name("Bot Bob");
 	}
 
 	~Game()
@@ -25,7 +25,7 @@ public:
 		leaderboard.clear();
 	}
 
-	void game_menus();
+	void game_menus(Player& player);
 
 	void draw_title();
 

@@ -16,25 +16,19 @@ Champ Champion_Proposition() {
 	while (choice1 == choice2) {
 		choice2 = Find_Champion_Proposition();
 	}
-	int answer = 0;
+	std::string answer = "0";
 	while (1) {
+		answer = "0";
 		std::cout << "1 = " << Find_Champion_NAME(choice1) << std::endl;
 		std::cout << "\n2 = " << Find_Champion_NAME(choice2) << std::endl;
 		std::cin >> answer;
-		if (answer == 1) {
+		if (answer == "1") {
 			return choice1;
 		}
-		else if (answer == 2) {
+		else if (answer == "2") {
 			return choice2;
 		}
-		else
-		{
-			//TODO
-			//return;
-		}
 	}
-
-
 }
 
 std::string Find_Champion_NAME(Champ choice) {
@@ -326,7 +320,9 @@ void Champion::Validation_Champion(Champ choice) {
 
 
 }
-
+/*std::string get_name_champion(Champion& champion_player) {
+	return champion_player.name;
+};*/
 void Champion::ability_effect() {
 
 }

@@ -48,7 +48,16 @@ public:
 		}
 		return temp;
 	};
-
+	std::vector<Card*> complete_shop_possible_card(std::vector<Card*> possible_card, std::vector<Card*> pShop) {
+		std::vector<Card*> temp = pShop;
+		int howmany = 3 - pShop.size();
+		for (int i = 0; i < howmany; i++) {
+			int random = rand() % possible_card.size();
+			Card* card = new Card(*possible_card[random]);
+			temp.push_back(card);
+		}
+		return temp;
+	};
 	std::vector<Card*> getCardList() {
 		return all_card;
 	};
