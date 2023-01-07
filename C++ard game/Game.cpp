@@ -34,7 +34,6 @@ void Game::main_game()//Boucle principale du jeu
 		//Gestion du combat entre les 2 joueurs
 		fight(&player, &opponent);
 
-		std::cout << "fin du round" << std::endl;
 		if (player.get_champion()->get_hp() <= 0)
 		{
 			std::cout << "Player 2 won !" << std::endl;
@@ -405,7 +404,7 @@ void Game::fight(Player* player, Player* opponent)
 		std::cout << "\nCHAMPION\t\t" << opponent->get_name() << ":\t" << opponent->get_champion()->get_name_champion() << "\n";
 		std::cout << "\t\t\tPoints de vie:\t" << opponent->get_champion()->get_hp() << "\n\n";
 		this_thread::sleep_for(chrono::milliseconds(2500));
-		system("cls");
+
 		//if a player have lost get out of the battle loop
 		if (pboard.size() <= 0 || oboard.size() <= 0)
 			break;
@@ -441,6 +440,15 @@ void Game::fight(Player* player, Player* opponent)
 
 		opponent->get_champion()->take_damage(damage);
 	}
+	system("cls");
+	std::cout << "CHAMPION\t\t" << player->get_name() << ":\t" << player->get_champion()->get_name_champion() << "\n";
+	std::cout << "\t\t\tPoints de vie:\t" << player->get_champion()->get_hp() << "\n\n";
+	printDeck(pboard);
+	std::cout << "=======================================================================================\n";
+	printDeck(oboard);
+	std::cout << "\nCHAMPION\t\t" << opponent->get_name() << ":\t" << opponent->get_champion()->get_name_champion() << "\n";
+	std::cout << "\t\t\tPoints de vie:\t" << opponent->get_champion()->get_hp() << "\n\n";
+	this_thread::sleep_for(chrono::milliseconds(2500));
 	//ends of the fight
 }
 
