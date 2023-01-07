@@ -64,8 +64,8 @@ void Game::startRound(Player& player)
 void Game::printDeck(std::vector<Card*> deck)
 {
 	for (int i = 0; i < deck.size(); i++) {
-		std::cout << "\t" << (i + 1) << ": " << deck[i]->getName() << "\n";
-		std::cout << "\t\tDEGATS:" << deck[i]->getDamage() << " - PV:" << deck[i]->getHp();
+		std::cout << "\t" << (i + 1) << ": " << "LVL: " << deck[i]->getLevel() << " " << deck[i]->getName() << "\n";
+		std::cout << "\t\t\tDEGATS:" << deck[i]->getDamage() << " - PV:" << deck[i]->getHp();
 		if (deck[i]->getRefEffectCard()->getBouclier())
 			std::cout << " - Bouclier";
 		if (deck[i]->getRefEffectCard()->getRafale_de_vent())
