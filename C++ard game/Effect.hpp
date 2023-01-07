@@ -68,7 +68,7 @@ public:
 	{
 		bouclier = state;
 	}
-	void setrafale_de_vent(bool state)
+	void setRafale_de_vent(bool state)
 	{
 		rafale_de_vent = state;
 	}
