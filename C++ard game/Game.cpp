@@ -23,10 +23,7 @@ void Game::main_game()
 	/*while (1)
 	{
 		startRound();
-
-
 		openShop();
-
 		loser = fight();
 		downgradePlayer(loser);
 	}*/
@@ -236,4 +233,3 @@ int Game::get_nb_round()
 {
 	return nb_round;
 }
-

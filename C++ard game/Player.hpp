@@ -41,6 +41,9 @@ public:
 	int get_money(int money, int nbround);
 
 	void player_turn();
+	void set_champion();
+	void set_champion_automaticly();
+
 
 	std::vector<Card*> getBoard() {
 		std::vector<Card*> rboard;

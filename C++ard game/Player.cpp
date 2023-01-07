@@ -10,9 +10,13 @@ void Player::player_turn()
 {
 
 }
-void Player::set_champion(Champion champion)
+void Player::set_champion()
 {
-	champion = champion;
+	champion.Validation_Champion(Champion_Proposition());
+}
+void Player::set_champion_automaticly()
+{
+	champion.Validation_Champion(Find_Champion_Proposition());
 }
 
 
