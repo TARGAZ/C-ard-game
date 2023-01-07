@@ -31,7 +31,7 @@ void Game::main_game()//Boucle principale du jeu
 
 		//Gestion du combat entre les 2 joueurs
 		fight(player, opponent);
-		
+
 		std::cout << "fin du round" << std::endl;
 	}
 
@@ -39,9 +39,9 @@ void Game::main_game()//Boucle principale du jeu
 }
 void Game::startRound(Player& player)
 {
-	
+
 	int cost_taverne = player.get_cost_levelup();
-	if (cost_taverne != 0) {
+	if (cost_taverne != 0)
 		player.set_cost_levelup(cost_taverne - 1);
 	if (nb_round < 9)
 		player.set_money(2 + nb_round);
