@@ -15,8 +15,7 @@ void Game::main_game()//Boucle principale du jeu
 	Draw draw2 = Draw();
 	draw.CreateCardList();
 	draw2.CreateCardList();
-	//player.setBoard(draw.getCardList());
-	//opponent.setBoard(draw2.getCardList());
+
 	//Creation des joueurs
 	game_menus(player);
 	player.set_champion();
@@ -25,7 +24,6 @@ void Game::main_game()//Boucle principale du jeu
 	while (1)
 	{
 		//initialise un round, définit l'argent attribué etc
-
 		startRound(player);
 		startRound(opponent);
 
@@ -40,10 +38,10 @@ void Game::main_game()//Boucle principale du jeu
 	}
 
 	std::cout << "fin du jeu" << std::endl;
+	system("pause");
 }
 void Game::startRound(Player& player)
 {
-
 	int cost_taverne = player.get_cost_levelup();
 	if (cost_taverne != 0)
 		player.set_cost_levelup(cost_taverne - 1);
@@ -51,9 +49,9 @@ void Game::startRound(Player& player)
 		player.set_money(2 + nb_round);
 	else
 		player.set_money(10);
-
 }
 
+//print a deck of cards and there infos importants to the player
 void Game::printDeck(std::vector<Card*> deck)
 {
 	for (int i = 0; i < deck.size(); i++) {
@@ -294,17 +292,17 @@ void Game::openShop(Player& player, Draw draw)
 
 	}
 }
+
+//make two card hit each others
 void Game::hit(Card* attacker, Card* adversary)
 {
 	if (adversary->getRefEffectCard()->getBouclier() == false)
-	{
 		attacker->setHp(attacker->getHp() - adversary->getDamage());
-	}
 	else
-	{
 		adversary->getRefEffectCard()->setBouclier(false);
-	}
 }
+
+//choose the card.s who attack what opponent card 
 void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
 {
 	int random = 0;
@@ -327,6 +325,7 @@ void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
 	}
 }
 
+//This function do the fight between two players, Do the round fight
 void Game::fight(Player* player, Player* opponent)
 {
 	nb_round = nb_round + 1;
@@ -336,42 +335,24 @@ void Game::fight(Player* player, Player* opponent)
 	std::vector<Card*> oboard = opponent->getBoard();
 	player_begin = false;
 	int random = rand() % 2;
-	int champion_ability = 0; // need to change it
-	if (champion_ability == 1)
-	{
-		//apply the ability in the champion class
-	}
 
-	//apply card effect if there is start fight ability
-	int card_ability = 0; // need to chnage it
-	if (card_ability == 1)
-	{
-		//apply the ability in the card class
-	}
 	//start with the player with the most card on board or randomise who start
 	if (pboard.size() > oboard.size())
-	{
 		//player start
 		player_begin = true;
-	}
+
 	else if (pboard.size() < oboard.size())
-	{
 		//opponent start
 		player_begin = false;
-	}
 	else
 	{
 		//randomise who start
 		if (random == 0)
-		{
 			//player start
 			player_begin = true;
-		}
 		else
-		{
 			//opponent start
 			player_begin = false;
-		}
 	}
 
 	//Do the card fight ends when one of the player has no card on board
@@ -387,6 +368,7 @@ void Game::fight(Player* player, Player* opponent)
 		std::cout << "\t\t\tPoints de vie:\t" << opponent->get_champion()->get_hp() << "\n\n";
 		this_thread::sleep_for(chrono::milliseconds(2500));
 		system("cls");
+		//check the player board for dead cards qnd erase them
 		for (int i = 0; i < pboard.size(); i++)
 		{
 			if (pboard[i]->getHp() <= 0)
@@ -397,11 +379,10 @@ void Game::fight(Player* player, Player* opponent)
 					pboard[i]->getRefEffectCard()->setReincarnation(false);
 				}
 				else
-				{
 					pboard.erase(pboard.begin());
-				}
 			}
 		}
+		//check the opponent board for dead cards qnd erase them
 		for (int i = 0; i < oboard.size(); i++)
 		{
 			if (oboard[i]->getHp() <= 0)
@@ -412,25 +393,21 @@ void Game::fight(Player* player, Player* opponent)
 					oboard[i]->getRefEffectCard()->setReincarnation(false);
 				}
 				else
-				{
 					oboard.erase(oboard.begin());
-				}
 			}
 		}
+		//if a player have lost get out of the battle loop
 		if (pboard.size() <= 0 || oboard.size() <= 0)
-		{
 			break;
-		}
-		if (player_begin)
-		{
-			attack(pboard, oboard);
 
-		}
-		if (!player_begin)
-		{
+		//decide who begin to attack
+		if (player_begin)
+			attack(pboard, oboard);
+		else
 			attack(oboard, pboard);
-		}
+		//make the other begin for the next turn
 		player_begin = !player_begin;
+
 	} while (pboard.size() >= 0 || oboard.size() >= 0);
 
 	//calculate the damage to apply to the opponant
@@ -440,9 +417,8 @@ void Game::fight(Player* player, Player* opponent)
 		//apply the damage to the opponent
 		int damage = 1;
 		for (int i = 0; i < oboard.size(); i++)
-		{
 			damage += oboard[i]->getCost();
-		}
+
 		player->get_champion()->take_damage(damage);
 	}
 	else
@@ -451,26 +427,11 @@ void Game::fight(Player* player, Player* opponent)
 		//apply the damage to the player
 		int damage = 1;
 		for (int i = 0; i < pboard.size(); i++)
-		{
 			damage += pboard[i]->getCost();
-		}
+
 		opponent->get_champion()->take_damage(damage);
 	}
-	//apply card end fight ability
-
-
 	//ends of the fight
-
-}
-
-void Game::downgradePlayer(Player loser)
-{
-
-}
-
-void Game::which_fighter()
-{
-
 }
 
 void Game::game_menus(Player& player)

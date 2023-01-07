@@ -6,10 +6,6 @@
  */
 
 
-void Player::player_turn()
-{
-
-}
 Champion* Player::get_champion()
 {
 	return &champion;
