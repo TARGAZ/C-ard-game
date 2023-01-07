@@ -358,16 +358,6 @@ void Game::fight(Player* player, Player* opponent)
 	//Do the card fight ends when one of the player has no card on board
 	do
 	{
-		system("cls");
-		std::cout << "CHAMPION\t\t" << player->get_name() << ":\t" << player->get_champion()->get_name_champion() << "\n";
-		std::cout << "\t\t\tPoints de vie:\t" << player->get_champion()->get_hp() << "\n\n";
-		printDeck(pboard);
-		std::cout << "=======================================================================================\n";
-		printDeck(oboard);
-		std::cout << "CHAMPION\t\t" << opponent->get_name() << ":\t" << opponent->get_champion()->get_name_champion() << "\n\n";
-		std::cout << "\t\t\tPoints de vie:\t" << opponent->get_champion()->get_hp() << "\n\n";
-		this_thread::sleep_for(chrono::milliseconds(2500));
-		system("cls");
 		//check the player board for dead cards qnd erase them
 		for (int i = 0; i < pboard.size(); i++)
 		{
@@ -396,6 +386,16 @@ void Game::fight(Player* player, Player* opponent)
 					oboard.erase(oboard.begin());
 			}
 		}
+		system("cls");
+		std::cout << "CHAMPION\t\t" << player->get_name() << ":\t" << player->get_champion()->get_name_champion() << "\n";
+		std::cout << "\t\t\tPoints de vie:\t" << player->get_champion()->get_hp() << "\n\n";
+		printDeck(pboard);
+		std::cout << "=======================================================================================\n";
+		printDeck(oboard);
+		std::cout << "\nCHAMPION\t\t" << opponent->get_name() << ":\t" << opponent->get_champion()->get_name_champion() << "\n";
+		std::cout << "\t\t\tPoints de vie:\t" << opponent->get_champion()->get_hp() << "\n\n";
+		this_thread::sleep_for(chrono::milliseconds(2500));
+		system("cls");
 		//if a player have lost get out of the battle loop
 		if (pboard.size() <= 0 || oboard.size() <= 0)
 			break;
