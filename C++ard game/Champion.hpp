@@ -49,6 +49,9 @@ public:
 	{
 
 	}
+	std::string get_name_champion() {
+		return name;
+	};
 };
 Champ Find_Champion_Proposition();
 Champ Champion_Proposition();

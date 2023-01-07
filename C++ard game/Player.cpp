@@ -17,17 +17,10 @@ void Player::set_champion()
 void Player::set_champion_automaticly()
 {
 	champion.Validation_Champion(Find_Champion_Proposition());
+	name = "Not Bob";
 }
 
 
-int Player::get_money(int money, int nbround)//nbround vient de la classe Game
-{
-	int var;
-	var = money + 1;
-	if (var > 10)
-		var = 10;
-	return var;
-}
 
 void Player::setBoard(std::vector<Card*> newBoard)
 {
