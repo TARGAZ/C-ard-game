@@ -53,7 +53,7 @@ void Game::startRound(Player& player)
 
 void Game::openShop(Player& player, Draw draw)
 {
-	//Initialisation
+	//Initialisations
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> pHand = player.getHand();
 	std::vector<Card*> pShop = player.getShop();
@@ -294,9 +294,9 @@ void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
 {
 	int random = 0;
 	bool raffale = false;
-	for (int i = 0; i < attacker.size(); i++) // boucle pour raffalle de vent
+	for (int i = 0; i < attacker.size(); i++) // boucle pour rafale de vent
 	{
-		if (attacker[i]->getRefEffectCard()->getRaffalle_de_vent() == true)
+		if (attacker[i]->getRefEffectCard()->getrafale_de_vent() == true)
 		{
 			raffale = true;
 			random = rand() % adversary.size();

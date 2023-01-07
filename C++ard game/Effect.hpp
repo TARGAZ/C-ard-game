@@ -4,7 +4,7 @@
 class Effect {
 private:
 	bool bouclier;
-	bool raffalle_de_vent;
+	bool rafale_de_vent;
 	bool provocation;
 	bool reincarnation;
 	bool rale_agony;
@@ -15,17 +15,17 @@ public:
 	Effect()
 	{
 		bouclier = false;
-		raffalle_de_vent = false;
+		rafale_de_vent = false;
 		provocation = false;
 		reincarnation = false;
 		rale_agony = false;
 		cri_de_guerre = false;
 	}
 
-	Effect(bool bouclier, bool raffalle_de_vent, bool provocation, bool reincarnation, bool rale_agony, bool cri_de_guerre)
+	Effect(bool bouclier, bool rafale_de_vent, bool provocation, bool reincarnation, bool rale_agony, bool cri_de_guerre)
 	{
 		this->bouclier = bouclier;
-		this->raffalle_de_vent = raffalle_de_vent;
+		this->rafale_de_vent = rafale_de_vent;
 		this->provocation = provocation;
 		this->reincarnation = reincarnation;
 		this->rale_agony = rale_agony;
@@ -42,9 +42,9 @@ public:
 	{
 		return bouclier;
 	}
-	bool getRaffalle_de_vent()
+	bool getrafale_de_vent()
 	{
-		return raffalle_de_vent;
+		return rafale_de_vent;
 	}
 	bool getProvocation()
 	{
@@ -68,9 +68,9 @@ public:
 	{
 		bouclier = state;
 	}
-	void setRaffalle_de_vent(bool state)
+	void setrafale_de_vent(bool state)
 	{
-		raffalle_de_vent = state;
+		rafale_de_vent = state;
 	}
 	void setProvocation(bool state)
 	{
