@@ -10,6 +10,10 @@ void Player::player_turn()
 {
 
 }
+Champion* Player::get_champion()
+{
+	return &champion;
+}
 void Player::set_champion()
 {
 	champion.Validation_Champion(Champion_Proposition());
@@ -20,9 +24,9 @@ void Player::set_champion_automaticly()
 	name = "Not Bob";
 }
 
-void Player::setBoard(std::vector<Card*> newBoard, Player& player)
+void Player::setBoard(std::vector<Card*> newBoard)
 {
-	player.Board = newBoard;
+	Board = newBoard;
 }
 
 /*void Player::setBoard(std::vector<Card*> newBoard)

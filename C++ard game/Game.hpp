@@ -18,7 +18,7 @@ private:
 public:
 	Game()
 	{
-		nb_round = 0;
+		nb_round = 1;
 		opponent.set_name("Bot Bob");
 	}
 

@@ -37,8 +37,8 @@ public:
 
 	}
 
-	int get_money(Player& player) {
-		return player.money;
+	int get_money() {
+		return money;
 	};
 	void set_money(int newMoney) {
 		money = newMoney;
@@ -46,8 +46,8 @@ public:
 	void set_name(std::string nameof) {
 		name = nameof;
 	};
-	int get_freeze(Player& player) {
-		return player.freeze_shop;
+	int get_freeze() {
+		return freeze_shop;
 	};
 	void change_freeze() {
 		if (freeze_shop == 1) {
@@ -57,19 +57,20 @@ public:
 			freeze_shop = 1;
 		}
 	};
-	int get_level(Player& player) {
-		return player.level;
+	int get_level() {
+		return level;
 	};
 	void upgrade_level() {
 		level = level + 1;
 	};
-	int get_cost_levelup(Player& player) {
-		return player.cost_levelup;
+	int get_cost_levelup() {
+		return cost_levelup;
 	};
 	void set_cost_levelup(int newCost) {
 		cost_levelup = newCost;
 	};
 	void player_turn();
+	Champion* get_champion();
 	void set_champion();
 	void set_champion_automaticly();
 
@@ -82,10 +83,10 @@ public:
 		}
 		return rhand;
 	};
-	void setHand(std::vector<Card*> newHand, Player& player){
-		player.Hand = newHand;
+	void setHand(std::vector<Card*> newHand) {
+		Hand = newHand;
 	};
-	
+
 	std::vector<Card*> getShop() {
 		std::vector<Card*> rShop;
 		for (int i = 0; i < Shop.size(); i++)
@@ -95,8 +96,8 @@ public:
 		}
 		return rShop;
 	};
-	void setShop(std::vector<Card*> newShop, Player& player) {
-		player.Shop = newShop;
+	void setShop(std::vector<Card*> newShop) {
+		Shop = newShop;
 	};
 
 	std::vector<Card*> getBoard() {
@@ -109,14 +110,10 @@ public:
 		return rboard;
 	};
 
-	void setBoard(std::vector<Card*> Board, Player& player);//Adrien
-	
-	Champion get_champion(Player& player) {
-		return player.champion;
-	};
+	void setBoard(std::vector<Card*> Board);//Adrien
 
-	std::string get_name(Player& player) {
-		return player.name;
+	std::string get_name() {
+		return name;
 	};
 	//void setBoard(std::vector<Card*> Board);//tanguy
 
