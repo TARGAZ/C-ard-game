@@ -29,6 +29,7 @@ void Game::main_game()
 
 
 		openShop(player, draw);
+		openShop(opponent, draw);
 
 		fight(player, opponent);
 		//downgradePlayer(loser);
@@ -107,7 +108,7 @@ void Game::openShop(Player& player, Draw draw)
 		//Board
 		std::cout << std::endl << "					BOARD			" << std::endl;
 		for (int i = 0; i < pboard.size(); i++) {
-			std::cout << i << ":   " << pboard[i]->getName() << std::endl;
+			std::cout << (i + 1) << ":   " << pboard[i]->getName() << std::endl;
 			std::cout << "               DAMAGE:" << pboard[i]->getDamage() << "   HP:" << pboard[i]->getHp() << std::endl;
 		}
 		//Hand
@@ -178,23 +179,38 @@ void Game::openShop(Player& player, Draw draw)
 		case 7:// POS crea
 			answer = 0;
 			std::cin >> answer;
-			if (0 < answer < 7) {
-				Card* card = new Card(*pHand[answer-1]);
-				pboard.push_back(card);
-				pHand.erase(pHand.begin()+(answer-1));
+			if (pboard.size() < 4) {
+				if (0 < answer < 7) {
+					Card* card = new Card(*pHand[answer - 1]);
+					pboard.push_back(card);
+					pHand.erase(pHand.begin() + (answer - 1));
+				}
 			}
 			break;
 		case 8:// ROTATE CREA
 			answer = 0;
 			std::cin >> answer;
 			if (0 < answer < 5) {
-				Card* card = new Card(*pHand[answer - 1]);
-				pboard.push_back(card);
-				pHand.erase(pHand.begin() + (answer - 1));
+				int first = 0;
+				first = answer;
+				answer = 0;
+				std::cin >> answer;
+				if (0 < answer < 5) {
+					int second = 0;
+					second = answer;
+					Card* card_first = new Card(*pboard[first - 1]);
+					*pboard[static_cast<std::vector<Card*, std::allocator<Card*>>::size_type>(first) - 1] = *pboard[static_cast<std::vector<Card*, std::allocator<Card*>>::size_type>(second) - 1];
+					*pboard[static_cast<std::vector<Card*, std::allocator<Card*>>::size_type>(second) - 1] = *card_first;
+				}
 			}
 			break;
 		case 9:// SELL CREA
-
+			answer = 0;
+			std::cin >> answer;
+			if (0 < answer < 4) {
+				pboard.erase(pboard.begin() + (answer - 1));
+				money = money + 1;
+			}
 			break;
 
 		default:
