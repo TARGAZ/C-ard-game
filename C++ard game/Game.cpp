@@ -22,6 +22,7 @@ void Game::main_game()//Boucle principale du jeu
 	while (1)
 	{
 		//initialise un round, définit l'argent attribué etc
+		
 		startRound(player);
 		startRound(opponent);
 
