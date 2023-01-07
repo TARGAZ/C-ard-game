@@ -22,6 +22,7 @@ void Game::main_game()//Boucle principale du jeu
 	while (1)
 	{
 		//initialise un round, définit l'argent attribué etc
+		
 		startRound(player);
 		startRound(opponent);
 
@@ -41,7 +42,7 @@ void Game::startRound(Player& player)
 {
 	
 	int cost_taverne = player.get_cost_levelup();
-	if (cost_taverne != 0) {
+	if (cost_taverne != 0)
 		player.set_cost_levelup(cost_taverne - 1);
 	if (nb_round < 9)
 		player.set_money(2 + nb_round);
