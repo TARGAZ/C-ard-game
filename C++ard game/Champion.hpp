@@ -30,12 +30,6 @@ public:
 		ability_id = 0;
 	}
 
-
-
-
-	void Validation_Champion(Champ choice);
-	void ability_effect();
-
 	Champion(std::string Champion_Choice)
 	{
 		name = Champion_Choice;
@@ -49,20 +43,18 @@ public:
 	{
 
 	}
-	std::string get_name_champion() {
-		return name;
-	}
-	int get_hp() {
-		return hp;
-	}
-	int get_armor() {
-		return armor;
-	}
-	void take_damage(int damage)
-	{
-		hp = hp - damage;
-	}
+
+	void Validation_Champion(Champ choice);
+	
+	std::string get_name_champion();
+	
+	int get_hp();
+	
+	int get_armor();
+
+	void take_damage(int damage);
 };
+
 Champ Find_Champion_Proposition();
 Champ Champion_Proposition();
 std::string Find_Champion_NAME(Champ choice);

@@ -48,87 +48,38 @@ public:
 	{
 
 	}
-
-	void FindAbility();
-
-	int getDamage()
-	{
-		return damage;
-	}
-
-	int getHp()
-	{
-		return hp;
-	}
-
-	int getType()
-	{
-		return type;
-	}
-
-	int getCost()
-	{
-		return cost;
-	}
-
-	int getLevel()
-	{
-		return level;
-	}
-
-	Effect getEffectCard()
-	{
-		return effect_card;
-	}
-
-	Effect* getRefEffectCard()
-	{
-		return &effect_card;
-	}
-
-	std::string getName()
-	{
-		return name;
-	}
-
-	void setDamage(int damage)
-	{
-		this->damage = damage;
-	}
-
-	void setHp(int hp)
-	{
-		this->hp = hp;
-	}
-
-	void setType(int type)
-	{
-		this->type = type;
-	}
-
-	void setLevel(int level)
-	{
-		this->level = level;
-	}
-
-	void setCost(int cost)
-	{
-		this->cost = cost;
-	}
-
-	void setEffectCard(Effect effect)
-	{
-		effect_card = effect;
-	}
-
-	void setName(std::string name)
-	{
-		this->name = name;
-	}
-
-	void attack(Card* adversary);
-
+	
+	int getDamage();
+	
+	int getHp();
+	
+	int getType();
+	
+	int getCost();
+	
+	int getLevel();
+	
+	Effect getEffectCard();
+	
+	Effect* getRefEffectCard();
+	
+	std::string getName();
+	
+	void setDamage(int damage);
+	
+	void setHp(int hp);
+	
+	void setType(int type);
+	
+	void setLevel(int level);
+	
+	void setCost(int cost);
+	
+	void setEffectCard(Effect effect);
+	
+	void setName(std::string name);
 };
+
 
 
 #endif

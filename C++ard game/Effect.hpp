@@ -4,7 +4,7 @@
 class Effect {
 private:
 	bool bouclier;
-	bool raffalle_de_vent;
+	bool rafale_de_vent;
 	bool provocation;
 	bool reincarnation;
 	bool rale_agony;
@@ -15,15 +15,16 @@ public:
 	Effect()
 	{
 		bouclier = false;
-		raffalle_de_vent = false;	
+		rafale_de_vent = false;
+		provocation = false;
 		reincarnation = false;
 
 	}
 
-	Effect(bool bouclier, bool raffalle_de_vent, bool provocation, bool reincarnation, bool rale_agony, bool cri_de_guerre)
+	Effect(bool bouclier, bool rafale_de_vent, bool provocation, bool reincarnation, bool rale_agony, bool cri_de_guerre)
 	{
 		this->bouclier = bouclier;
-		this->raffalle_de_vent = raffalle_de_vent;
+		this->rafale_de_vent = rafale_de_vent;
 		this->reincarnation = reincarnation;
 	}
 
@@ -33,30 +34,25 @@ public:
 	}
 
 	//get for all the effects
-	bool getBouclier()
-	{
-		return bouclier;
-	}
-	bool getRaffalle_de_vent()
-	{
-		return raffalle_de_vent;
-	}
-	bool getReincarnation()
-	{
-		return reincarnation;
-	}
-	void setBouclier(bool state)
-	{
-		bouclier = state;
-	}
-	void setRaffalle_de_vent(bool state)
-	{
-		raffalle_de_vent = state;
-	}
-	void setReincarnation(bool state)
-	{
-		reincarnation = state;
-	}
+	bool getBouclier();
+	
+	bool getRaffalle_de_vent();
+	
+	bool getProvocation();
+	
+	bool getReincarnation();
+	
+	bool getRale_agony();
+	
+	bool getCri_de_guerre();
+	
+	void setBouclier(bool state);
+	
+	void setRaffalle_de_vent(bool state);
+	
+	void setProvocation(bool state);
+	
+	void setReincarnation(bool state);
 };
 
 #endif //_EFFECT_H

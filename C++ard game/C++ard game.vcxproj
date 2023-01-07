@@ -133,15 +133,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Ability_Beast.cpp" />
-    <ClCompile Include="Ability_Demon.cpp" />
-    <ClCompile Include="Ability_Dragon.cpp" />
-    <ClCompile Include="Ability_Elementary.cpp" />
-    <ClCompile Include="Ability_Human.cpp" />
-    <ClCompile Include="Ability_Meca.cpp" />
-    <ClCompile Include="Ability_Murloc.cpp" />
-    <ClCompile Include="Ability_Naga.cpp" />
-    <ClCompile Include="Ability_Normal.cpp" />
     <ClCompile Include="Card.cpp" />
     <ClCompile Include="Champion.cpp" />
     <ClCompile Include="Draw.cpp" />
@@ -151,15 +142,6 @@
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ability_Beast.hpp" />
-    <ClInclude Include="Ability_Demon.hpp" />
-    <ClInclude Include="Ability_Dragon.hpp" />
-    <ClInclude Include="Ability_Elementary.hpp" />
-    <ClInclude Include="Ability_Human.hpp" />
-    <ClInclude Include="Ability_Meca.hpp" />
-    <ClInclude Include="Ability_Murloc.hpp" />
-    <ClInclude Include="Ability_Naga.hpp" />
-    <ClInclude Include="Ability_Normal.hpp" />
     <ClInclude Include="Card.hpp" />
     <ClInclude Include="Champ.hpp" />
     <ClInclude Include="Champion.hpp" />
