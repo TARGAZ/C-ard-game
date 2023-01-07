@@ -5,18 +5,13 @@ class Effect {
 private:
 	bool bouclier;
 	bool rafale_de_vent;
-	bool provocation;
 	bool reincarnation;
-	bool rale_agony;
-	bool cri_de_guerre;
 
-	void ApplyEffect();
 public:
 	Effect()
 	{
 		bouclier = false;
 		rafale_de_vent = false;
-		provocation = false;
 		reincarnation = false;
 
 	}
@@ -35,23 +30,15 @@ public:
 
 	//get for all the effects
 	bool getBouclier();
-	
-	bool getRaffalle_de_vent();
-	
-	bool getProvocation();
-	
+
+	bool getRafale_de_vent();
+
 	bool getReincarnation();
-	
-	bool getRale_agony();
-	
-	bool getCri_de_guerre();
-	
+
 	void setBouclier(bool state);
-	
-	void setRaffalle_de_vent(bool state);
-	
-	void setProvocation(bool state);
-	
+
+	void setRafale_de_vent(bool state);
+
 	void setReincarnation(bool state);
 };
 

@@ -58,7 +58,7 @@ void Game::printDeck(std::vector<Card*> deck)
 		std::cout << "\t\tDEGATS:" << deck[i]->getDamage() << " - PV:" << deck[i]->getHp();
 		if (deck[i]->getRefEffectCard()->getBouclier())
 			std::cout << " - Bouclier";
-		if (deck[i]->getRefEffectCard()->getRaffalle_de_vent())
+		if (deck[i]->getRefEffectCard()->getRafale_de_vent())
 			std::cout << " - Rafale de vent";
 		if (deck[i]->getRefEffectCard()->getReincarnation())
 			std::cout << " - Reincarnation";
@@ -98,18 +98,18 @@ void Game::openShop(Player& player, Draw draw)
 		std::cout << "CHAMPION\t\t" << name_player << ":\t" << name_champ->get_name_champion() << "\n";
 		std::cout << "\t\t\tPoints de vie:\t" << name_champ->get_hp() << "\n\n";
 		std::cout << "=======================================================================================\n";
-		
+
 		//Money
-		
+
 		//Niveau
 		//Attention a la condition si on ne peut plu
-		
-		std::cout << "Niveau de Taverne: " << level <<"\nOr: " << money << "\n";
+
+		std::cout << "Niveau de Taverne: " << level << "\nOr: " << money << "\n";
 		std::cout << "TAVERNE :\n\n";
 		//Card in the shop
 		printDeck(pShop);
 		//Board
-		std::cout  << "\n\nAPPUYER NUMERO: Acheter carte, Prix : 3\nAPPUYER 4: Actualiser magasin\nAPPUYER 5: Garder magasin, Etat: ";
+		std::cout << "\n\nAPPUYER NUMERO: Acheter carte, Prix : 3\nAPPUYER 4: Actualiser magasin\nAPPUYER 5: Garder magasin, Etat: ";
 		if (freeze == 1)
 			std::cout << "ACTIF\n";
 
@@ -131,7 +131,7 @@ void Game::openShop(Player& player, Draw draw)
 		printDeck(pHand);
 
 		std::cout << "\n\nAPPUYER 8: Poser carte sur le plateau\nAPPUYER 9: Echanger cartes\nAPPUYER 0: Vendre carte\n";
-		
+
 
 		//Gestion des différents choix
 		answerchar = "";
