@@ -9,9 +9,12 @@ void Game::main_game()//Boucle principale du jeu
 	Player player = Player();
 	Player opponent = Player();
 	Draw draw = Draw();
+	Draw draw2 = Draw();
 	draw.CreateCardList();
-	
-	//Création des joueurs
+	draw2.CreateCardList();
+	//player.setBoard(draw.getCardList());
+	//opponent.setBoard(draw2.getCardList());
+	//Creation des joueurs
 	game_menus(player);
 	player.set_champion();
 	opponent.set_champion_automatically();
@@ -20,6 +23,7 @@ void Game::main_game()//Boucle principale du jeu
 	{
 		//initialise un round, définit l'argent attribué etc
 		startRound(player);
+		startRound(opponent);
 
 		//gestion du shop pour les 2 joueurs
 		openShop(player, draw);
@@ -35,10 +39,9 @@ void Game::main_game()//Boucle principale du jeu
 }
 void Game::startRound(Player& player)
 {
-	nb_round = nb_round + 1;//On incrémente le nombre de round
-	int cost_taverne = player.get_cost_levelup(player);//on définit le cout de l'amélioration du niveau de taverne
 	
-	if (cost_taverne != 0)
+	int cost_taverne = player.get_cost_levelup();
+	if (cost_taverne != 0) {
 		player.set_cost_levelup(cost_taverne - 1);
 	if (nb_round < 9)
 		player.set_money(2 + nb_round);
@@ -53,13 +56,13 @@ void Game::openShop(Player& player, Draw draw)
 	std::vector<Card*> pboard = player.getBoard();
 	std::vector<Card*> pHand = player.getHand();
 	std::vector<Card*> pShop = player.getShop();
-	int freeze = player.get_freeze(player);
-	int level = player.get_level(player);
-	int money = player.get_money(player);
-	int cost_level_up = player.get_cost_levelup(player);
+	int freeze = player.get_freeze();
+	int level = player.get_level();
+	int money = player.get_money();
+	int cost_level_up = player.get_cost_levelup();
 	std::vector<Card*> possible_card = draw.get_possible_card(draw.getCardList(), level);
-	std::string name_player = player.get_name(player);
-	Champion name_champ = player.get_champion(player);
+	std::string name_player = player.get_name();
+	Champion* name_champ = player.get_champion();
 	//creation du shop
 	if (freeze == 1) {
 		if (pShop.size() != 3) {
@@ -77,8 +80,8 @@ void Game::openShop(Player& player, Draw draw)
 	while (1) {
 		//affichage du shop
 		system("cls");
-		std::cout << "					SHOP			" << name_player << ":   " << name_champ.get_name_champion() << std::endl;
-		std::cout << "					    			" <<"HP:   " << name_champ.get_hp() <<"    Armor:   " << name_champ.get_armor() << std::endl << std::endl;
+		std::cout << "					SHOP			" << name_player << ":   " << name_champ->get_name_champion() << std::endl;
+		std::cout << "					    			" << "HP:   " << name_champ->get_hp() << "    Armor:   " << name_champ->get_armor() << std::endl << std::endl;
 		//Money
 		std::cout << "    Money:   " << money << "          PRESS 1: REROLL SHOP" << "          PRESS 2: FREEZE SHOP : ";
 		if (freeze == 1) {
@@ -113,8 +116,8 @@ void Game::openShop(Player& player, Draw draw)
 		//Hand
 		std::cout << std::endl << "					HAND			" << std::endl;
 		for (int i = 0; i < pHand.size(); i++) {
-			std::cout << (i+1) << ":   " << pHand[i]->getName() << std::endl;
-			std::cout <<  "               DAMAGE:" << pHand[i]->getDamage() << "   HP:" << pHand[i]->getHp() << std::endl << std::endl;
+			std::cout << (i + 1) << ":   " << pHand[i]->getName() << std::endl;
+			std::cout << "               DAMAGE:" << pHand[i]->getDamage() << "   HP:" << pHand[i]->getHp() << std::endl << std::endl;
 		}
 
 		//Gestion des diff�rents choix
@@ -145,7 +148,7 @@ void Game::openShop(Player& player, Draw draw)
 			break;
 		case 2:// FREEZE shop
 			player.change_freeze();
-			freeze = player.get_freeze(player);
+			freeze = player.get_freeze();
 			break;
 		case 3:// UPGRADE shop
 			if (level != 4) {
@@ -153,18 +156,18 @@ void Game::openShop(Player& player, Draw draw)
 					money = money - cost_level_up;
 					player.set_cost_levelup(5);
 					player.upgrade_level();
-					level = player.get_level(player);
+					level = player.get_level();
 				}
 			}
 			break;
 		case 4:// Achat crea 1
-			if (pShop.size()>0) {
+			if (pShop.size() > 0) {
 				if (money >= 3) {
 					if (pHand.size() != 6) {
 						money = money - 3;
-							Card* card = new Card(*pShop[0]);
-							pHand.push_back(card);
-							pShop.erase(pShop.begin());
+						Card* card = new Card(*pShop[0]);
+						pHand.push_back(card);
+						pShop.erase(pShop.begin());
 					}
 				}
 			}
@@ -206,7 +209,7 @@ void Game::openShop(Player& player, Draw draw)
 			else if (answerchar == "7") answer = 7;
 			if (pboard.size() < 4) {
 				if (0 < answer && answer < 7) {
-					if (pHand.size() >((static_cast<unsigned long long>(answer) - 1))) {
+					if (pHand.size() > ((static_cast<unsigned long long>(answer) - 1))) {
 						Card* card = new Card(*pHand[answer - 1]);
 						pboard.push_back(card);
 						pHand.erase(pHand.begin() + (answer - 1));
@@ -258,7 +261,7 @@ void Game::openShop(Player& player, Draw draw)
 			else if (answerchar == "5") answer = 5;
 			if (0 < answer && answer < 4) {
 				if (pboard.size() > ((static_cast<unsigned long long>(answer) - 1)))
-				pboard.erase(pboard.begin() + (answer - 1));
+					pboard.erase(pboard.begin() + (answer - 1));
 				money = money + 1;
 			}
 			break;
@@ -267,9 +270,9 @@ void Game::openShop(Player& player, Draw draw)
 			break;
 		}
 		if (go_out != 0) {
-			player.setShop(pShop, player);
-			player.setBoard(pboard, player);
-			player.setHand(pHand, player);
+			player.setShop(pShop);
+			player.setBoard(pboard);
+			player.setHand(pHand);
 			break;
 		}
 
@@ -310,6 +313,7 @@ void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
 
 void Game::fight(Player player, Player opponent)
 {
+	nb_round = nb_round + 1;
 	//start of the fight
 	//apply appility of the champion if he pay it in shop
 	std::vector<Card*> pboard = player.getBoard();
@@ -413,7 +417,7 @@ void Game::fight(Player player, Player opponent)
 		{
 			damage += oboard[i]->getCost();
 		}
-		//player.setChampionHp(player.getChampionHp() - damage);
+		player.get_champion()->take_damage(damage);
 	}
 	else
 	{
@@ -424,7 +428,7 @@ void Game::fight(Player player, Player opponent)
 		{
 			damage += pboard[i]->getCost();
 		}
-		//opponent.setChampionHp(opponent.getChampionHp() - damage);
+		opponent.get_champion()->take_damage(damage);
 	}
 	//apply card end fight ability
 

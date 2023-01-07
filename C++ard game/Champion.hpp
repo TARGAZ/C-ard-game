@@ -58,6 +58,10 @@ public:
 	int get_armor() {
 		return armor;
 	}
+	void take_damage(int damage)
+	{
+		hp = hp - damage;
+	}
 };
 Champ Find_Champion_Proposition();
 Champ Champion_Proposition();
