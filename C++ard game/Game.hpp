@@ -40,9 +40,11 @@ public:
 
 	void startRound(Player& player);
 
+	void printDeck(std::vector<Card*> deck);
+
 	void openShop(Player& player, Draw draw);
 
-	void fight(Player player, Player opponent);
+	void fight(Player* player, Player* opponent);
 
 	void hit(Card* attacker, Card* adversary);
 

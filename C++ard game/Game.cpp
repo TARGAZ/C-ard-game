@@ -22,7 +22,7 @@ void Game::main_game()//Boucle principale du jeu
 	while (1)
 	{
 		//initialise un round, définit l'argent attribué etc
-		
+
 		startRound(player);
 		startRound(opponent);
 
@@ -31,7 +31,7 @@ void Game::main_game()//Boucle principale du jeu
 		openShop(opponent, draw);
 
 		//Gestion du combat entre les 2 joueurs
-		fight(player, opponent);
+		fight(&player, &opponent);
 
 		std::cout << "fin du round" << std::endl;
 	}
@@ -51,6 +51,20 @@ void Game::startRound(Player& player)
 
 }
 
+void Game::printDeck(std::vector<Card*> deck)
+{
+	for (int i = 0; i < deck.size(); i++) {
+		std::cout << "\t" << (i + 1) << ": " << deck[i]->getName() << "\n";
+		std::cout << "\t\tDEGATS:" << deck[i]->getDamage() << " - PV:" << deck[i]->getHp();
+		if (deck[i]->getRefEffectCard()->getBouclier())
+			std::cout << " - Bouclier";
+		if (deck[i]->getRefEffectCard()->getRaffalle_de_vent())
+			std::cout << " - Rafale de vent";
+		if (deck[i]->getRefEffectCard()->getReincarnation())
+			std::cout << " - Reincarnation";
+		std::cout << std::endl;
+	}
+}
 void Game::openShop(Player& player, Draw draw)
 {
 	//Initialisation
@@ -81,51 +95,49 @@ void Game::openShop(Player& player, Draw draw)
 	while (1) {
 		//affichage du shop
 		system("cls");
-		std::cout << "					SHOP			" << name_player << ":   " << name_champ->get_name_champion() << std::endl;
-		std::cout << "					    			" << "HP:   " << name_champ->get_hp() << "    Armor:   " << name_champ->get_armor() << std::endl << std::endl;
+		std::cout << "CHAMPION\t\t" << name_player << ":\t" << name_champ->get_name_champion() << "\n";
+		std::cout << "\t\t\tPoints de vie:\t" << name_champ->get_hp() << "\n\n";
+		std::cout << "=======================================================================================\n";
+		
 		//Money
-		std::cout << "    Money:   " << money << "          PRESS 1: REROLL SHOP" << "          PRESS 2: FREEZE SHOP : ";
-		if (freeze == 1) {
-			std::cout << "ACTIVATED";
-		}
-		else {
-			std::cout << "DESCTIVATED";
-		}
-		std::cout << "          PRESS 666: END PHASE SHOP" << std::endl << std::endl;
+		
 		//Niveau
-		std::cout << "Actual Level:   " << level;
 		//Attention a la condition si on ne peut plu
+		
+		std::cout << "Niveau de Taverne: " << level <<"\nOr: " << money << "\n";
+		std::cout << "TAVERNE :\n\n";
+		//Card in the shop
+		printDeck(pShop);
+		//Board
+		std::cout  << "\n\nAPPUYER NUMERO: Acheter carte, Prix : 3\nAPPUYER 4: Actualiser magasin\nAPPUYER 5: Garder magasin, Etat: ";
+		if (freeze == 1)
+			std::cout << "ACTIF\n";
+
+		else
+			std::cout << "INACTIF\n";
+
 		if (level == 4) {
-			std::cout << std::endl << std::endl;
+			std::cout << "\n";
 		}
 		else {
-			std::cout << "			PRESS 3: COST UPGRADE Level:   " << cost_level_up << std::endl << std::endl;
+			std::cout << "APPUYER 6: Ameliorer taverne, Prix: " << cost_level_up << "\n";
 		}
-		//Tuto
-		std::cout << "PRESS 7: to put crea  PRESS 8: to rotate crea   PRESS 9: to sell crea " << std::endl << std::endl;
-		//Card in the shop
-		for (int i = 0; i < pShop.size(); i++) {
-			std::cout << "PRESS " << (i + 4) << ":   " << pShop[i]->getName() << std::endl;
-			std::cout << "               DAMAGE:" << pShop[i]->getDamage() << "   HP:" << pShop[i]->getHp() << std::endl;
-		}
-		//Board
-		std::cout << std::endl << "					BOARD			" << std::endl;
-		for (int i = 0; i < pboard.size(); i++) {
-			std::cout << (i + 1) << ":   " << pboard[i]->getName() << std::endl;
-			std::cout << "               DAMAGE:" << pboard[i]->getDamage() << "   HP:" << pboard[i]->getHp() << std::endl;
-		}
+		std::cout << "APPUYER 7: Finir phase d'achat\n";
+		std::cout << "=======================================================================================\n";
+		std::cout << std::endl << "\t== PLATEAU ==\n";
+		printDeck(pboard);
 		//Hand
-		std::cout << std::endl << "					HAND			" << std::endl;
-		for (int i = 0; i < pHand.size(); i++) {
-			std::cout << (i + 1) << ":   " << pHand[i]->getName() << std::endl;
-			std::cout << "               DAMAGE:" << pHand[i]->getDamage() << "   HP:" << pHand[i]->getHp() << std::endl << std::endl;
-		}
+		std::cout << std::endl << "\t== MAIN ==\n";
+		printDeck(pHand);
 
-		//Gestion des diff�rents choix
-		answerchar = "0";
+		std::cout << "\n\nAPPUYER 8: Poser carte sur le plateau\nAPPUYER 9: Echanger cartes\nAPPUYER 0: Vendre carte\n";
+		
+
+		//Gestion des différents choix
+		answerchar = "";
 		answer = 0;
 		std::cin >> answerchar;
-		if (answerchar == "666") answer = 666;
+		if (answerchar == "0") answer = 0;
 		else if (answerchar == "1") answer = 1;
 		else if (answerchar == "2") answer = 2;
 		else if (answerchar == "3") answer = 3;
@@ -137,21 +149,21 @@ void Game::openShop(Player& player, Draw draw)
 		else if (answerchar == "9") answer = 9;
 
 		switch (answer) {
-		case 666://exit shop
+		case 7://exit shop
 			go_out = 1;
 			break;
-		case 1:// REROLL shop
+		case 4:// REROLL shop
 			if (money >= 1) {
 				money = money - 1;
 				possible_card = draw.get_possible_card(draw.getCardList(), level);
 				pShop = draw.pick_possible_card(possible_card, 3);
 			}
 			break;
-		case 2:// FREEZE shop
+		case 5:// FREEZE shop
 			player.change_freeze();
 			freeze = player.get_freeze();
 			break;
-		case 3:// UPGRADE shop
+		case 6:// UPGRADE shop
 			if (level != 4) {
 				if (money >= cost_level_up) {
 					money = money - cost_level_up;
@@ -161,7 +173,7 @@ void Game::openShop(Player& player, Draw draw)
 				}
 			}
 			break;
-		case 4:// Achat crea 1
+		case 1:// Achat crea 1
 			if (pShop.size() > 0) {
 				if (money >= 3) {
 					if (pHand.size() != 6) {
@@ -173,7 +185,7 @@ void Game::openShop(Player& player, Draw draw)
 				}
 			}
 			break;
-		case 5:// Achat crea 2
+		case 2:// Achat crea 2
 			if (pShop.size() > 1) {
 				if (money >= 3) {
 					if (pHand.size() != 6) {
@@ -185,7 +197,7 @@ void Game::openShop(Player& player, Draw draw)
 				}
 			}
 			break;
-		case 6:// Achat crea 3
+		case 3:// Achat crea 3
 			if (pShop.size() > 2) {
 				if (money >= 3) {
 					if (pHand.size() != 6) {
@@ -197,7 +209,7 @@ void Game::openShop(Player& player, Draw draw)
 				}
 			}
 			break;
-		case 7:// POS crea
+		case 8:// POS crea
 			answerchar = "0";
 			answer = 0;
 			std::cin >> answerchar;
@@ -218,7 +230,7 @@ void Game::openShop(Player& player, Draw draw)
 				}
 			}
 			break;
-		case 8:// ROTATE CREA
+		case 9:// ROTATE CREA
 			answerchar = "0";
 			answer = 0;
 			std::cin >> answerchar;
@@ -251,7 +263,7 @@ void Game::openShop(Player& player, Draw draw)
 				}
 			}
 			break;
-		case 9:// SELL CREA
+		case 0:// SELL CREA
 			answerchar = "0";
 			answer = 0;
 			std::cin >> answerchar;
@@ -312,13 +324,13 @@ void Game::attack(std::vector<Card*> attacker, std::vector<Card*> adversary)
 	}
 }
 
-void Game::fight(Player player, Player opponent)
+void Game::fight(Player* player, Player* opponent)
 {
 	nb_round = nb_round + 1;
 	//start of the fight
 	//apply appility of the champion if he pay it in shop
-	std::vector<Card*> pboard = player.getBoard();
-	std::vector<Card*> oboard = opponent.getBoard();
+	std::vector<Card*> pboard = player->getBoard();
+	std::vector<Card*> oboard = opponent->getBoard();
 	player_begin = false;
 	int random = rand() % 2;
 	int champion_ability = 0; // need to change it
@@ -418,7 +430,7 @@ void Game::fight(Player player, Player opponent)
 		{
 			damage += oboard[i]->getCost();
 		}
-		player.get_champion()->take_damage(damage);
+		player->get_champion()->take_damage(damage);
 	}
 	else
 	{
@@ -429,7 +441,7 @@ void Game::fight(Player player, Player opponent)
 		{
 			damage += pboard[i]->getCost();
 		}
-		opponent.get_champion()->take_damage(damage);
+		opponent->get_champion()->take_damage(damage);
 	}
 	//apply card end fight ability
 
