@@ -34,8 +34,6 @@ public:
 
 	void main_game();
 
-	void which_fighter();
-
 	int get_nb_round();
 
 	void startRound(Player& player);
@@ -50,7 +48,6 @@ public:
 
 	void attack(std::vector<Card*> attacker, std::vector<Card*> adversary);
 
-	void downgradePlayer(Player loser);
 
 };
 

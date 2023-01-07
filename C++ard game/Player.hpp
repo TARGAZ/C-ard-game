@@ -38,37 +38,35 @@ public:
 	}
 
 	int get_money();
-	
+
 	void set_money(int newMoney);
-	
+
 	void set_name(std::string nameof);
-	
+
 	int get_freeze();
-	
+
 	void change_freeze();
-	
+
 	int get_level();
-	
+
 	void upgrade_level();
-	
+
 	int get_cost_levelup();
-	
+
 	void set_cost_levelup(int newCost);
-	
-	void player_turn();
-	
+
 	Champion* get_champion();
-	
+
 	void set_champion();
-	
+
 	void set_champion_automatically();
 
 	std::vector<Card*> getHand();
-	
+
 	void setHand(std::vector<Card*> newHand);
 
 	std::vector<Card*> getShop();
-	
+
 	void setShop(std::vector<Card*> newShop);
 
 	std::vector<Card*> getBoard();
