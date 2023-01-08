@@ -41,7 +41,7 @@ void Game::main_game()//Boucle principale du jeu
 		}
 		if (opponent.get_champion()->get_hp() <= 0)
 		{
-			std::cout << "Player " << player.get_name() << " won !" << std::endl;
+			std::cout << "Le joueur " << player.get_name() << " a Gagner!" << std::endl;
 			break;
 		}
 	}
@@ -178,6 +178,7 @@ void Game::openShop(Player& player, Draw draw)
 				if (money >= cost_level_up) {
 					money = money - cost_level_up;
 					player.set_cost_levelup(5);
+					cost_level_up = player.get_cost_levelup();
 					player.upgrade_level();
 					level = player.get_level();
 				}
@@ -284,8 +285,10 @@ void Game::openShop(Player& player, Draw draw)
 			else if (answerchar == "5") answer = 5;
 			if (0 < answer && answer < 4) {
 				if (pboard.size() > ((static_cast<unsigned long long>(answer) - 1)))
+				{
 					pboard.erase(pboard.begin() + (answer - 1));
-				money = money + 1;
+					money = money + 1;
+				}
 			}
 			break;
 
@@ -420,26 +423,27 @@ void Game::fight(Player* player, Player* opponent)
 	} while (pboard.size() >= 0 || oboard.size() >= 0);
 
 	//calculate the damage to apply to the opponant
-	if (pboard.size() <= 0)
+	if (pboard.size() <= 0 && oboard.size() > 0)
 	{
 		//opponent win
-		//apply the damage to the opponent
-		int damage = 1;
+		//apply the damage to the player
+		int damage = opponent->get_level();
 		for (int i = 0; i < oboard.size(); i++)
-			damage += oboard[i]->getCost();
+			damage += oboard[i]->getLevel();
 
 		player->get_champion()->take_damage(damage);
 	}
-	else
+	else if (oboard.size() <= 0 && pboard.size() > 0)
 	{
 		//player win
-		//apply the damage to the player
-		int damage = 1;
+		//apply the damage to the opponent
+		int damage = player->get_level();
 		for (int i = 0; i < pboard.size(); i++)
-			damage += pboard[i]->getCost();
+			damage += pboard[i]->getLevel();
 
 		opponent->get_champion()->take_damage(damage);
 	}
+
 	system("cls");
 	std::cout << "CHAMPION\t\t" << player->get_name() << ":\t" << player->get_champion()->get_name_champion() << "\n";
 	std::cout << "\t\t\tPoints de vie:\t" << player->get_champion()->get_hp() << "\n\n";

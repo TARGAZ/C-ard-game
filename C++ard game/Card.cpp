@@ -22,7 +22,7 @@ int Card::getCost()
 
 int Card::getLevel()
 {
-	return level;
+	return cost;
 }
 
 Effect Card::getEffectCard()
